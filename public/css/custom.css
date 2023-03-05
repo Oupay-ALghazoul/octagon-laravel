@@ -1,0 +1,8 @@
+@font-face {
+    font-family: ACaslonProRegular;
+    src: url("/css/fonts/ACaslonPro-Regular.otf");
+}
+
+.ACaslonPro-Regular-font {
+    font-family: ACaslonPro-Regular !important;
+}
