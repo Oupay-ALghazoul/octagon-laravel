@@ -2,12 +2,15 @@
     // $setting_home = \App\Models\SiteSetting::first()->translate(app()->getLocale(), 'fallbackLocale');
     // $services = \App\Models\Service::get()->translate(app()->getLocale(), 'fallbackLocale');;
     // $news = \App\Models\News::orderBy('id','desc')->skip(0)->take(3)->get()->translate(app()->getLocale(), 'fallbackLocale');;
-    $services = \App\Models\Service::get();
-    $slides = \App\Models\HomeSlide::get();
+    $locale = Session::get('locale') ?? 'en';
+    $services = \App\Models\Service::withTranslation(['ar', 'ru'])->get();
+    $slides = \App\Models\HomeSlide::withTranslations(['ar', 'ru'])->get();
+    // dd($locale, $slides[0]->getTranslatedAttribute('title', $locale , 'en'), $slides[1]->getTranslatedAttribute('title', 'ar', 'en'));
+    app()->setLocale($locale);
+    
 @endphp
 
 @extends('app')
-
 @section('content')
     @foreach ($slides as $slide)
     @endforeach
@@ -28,12 +31,12 @@
                                     <div class="d-flex flex-column align-items-center justify-content-center h-100">
                                         <h1 class="text-color-light font-weight-extra-bold text-12-5 line-height-3 mb-2 appear-animation"
                                             data-appear-animation="blurIn" data-appear-animation-delay="500"
-                                            data-plugin-options="{'minWindowWidth': 0}">{{ $slide->title }}</h1>
-                                        <p 
-                                        data-appear-animation="blurIn" data-appear-animation-delay="800"
+                                            data-plugin-options="{'minWindowWidth': 0}">
+                                            {{ $slide->getTranslatedAttribute('title', $locale, 'en') }}</h1>
+                                        <p data-appear-animation="blurIn" data-appear-animation-delay="800"
                                             data-plugin-options="{'minWindowWidth': 0}"
                                             class="text-4-5 text-color-light font-weight-light opacity-7 text-center mb-5">
-                                            {{ $slide->sub_title }}
+                                            {{ $slide->getTranslatedAttribute('sub_title', $locale, 'en') }}
                                         </p>
                                         <a href="#"
                                             class="btn btn-light btn-outline text-color-light text-color-hover-dark font-weight-bold text-3 btn-px-5 py-3 appear-animation"
@@ -56,21 +59,21 @@
 
     <div class="home-intro light border border-bottom-0 mb-0">
         <div class="container">
-
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <p class="font-weight-bold text-color-dark">
-                        The fastest way to grow your business with the leader in <span
+                        {{ __('The fastest way to grow your business with the leader in') }} <span
                             class="highlighted-word highlighted-word-animation-1 text-color-primary font-weight-semibold text-5">
-                            Consultancy </span>
-                        <span>Check out our options and features included.</span>
+                            {{ __('Consultancy') }} </span>
+                        <span>{{ __('Check out our options and features included') }}.</span>
                     </p>
                 </div>
                 <div class="col-lg-4">
                     <div class="get-started text-start text-lg-end">
                         <a href="#" class="btn btn-primary btn-lg text-3 font-weight-semibold btn-py-2 px-4">Get
                             Started Now</a>
-                        <div class="learn-more">or <a href="index.html" class="font-weight-bold">learn more.</a></div>
+                        <div class="learn-more">or <a href="index.html" class="font-weight-bold">{{ __('learn more') }}.</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,7 +87,7 @@
             <div class="col-md-10 mx-md-auto">
                 <h1 class="word-rotator slide font-weight-bold text-8 mb-3 appear-animation"
                     data-appear-animation="fadeInUpShorter">
-                    <span>Octagon is </span>
+                    <span> Octagon is </span>
                     <span class="word-rotator-words bg-primary">
                         <b class="is-visible">incredibly</b>
                         <b>especially</b>
@@ -107,25 +110,25 @@
                 <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="counter">
                         <strong data-to="{{ setting('site.clients_count') }}" data-append="+">0</strong>
-                        <label>Clients</label>
+                        <label>{{ __('Clients') }}</label>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
                     <div class="counter">
                         <strong data-to="{{ setting('site.years_of_experience') }}">0</strong>
-                        <label>Years of Experience</label>
+                        <label>{{ __('Years of Experience') }}</label>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-3 mb-4 mb-sm-0">
                     <div class="counter">
                         <strong data-to="{{ setting('site.projects_count') }}">0</strong>
-                        <label>Projects</label>
+                        <label>{{ __('Projects') }}</label>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <div class="counter">
                         <strong data-to="{{ setting('site.employees_count') }}">0</strong>
-                        <label>Employees</label>
+                        <label>{{ __('Employees') }}</label>
                     </div>
                 </div>
             </div>
@@ -137,7 +140,8 @@
             <div class="row align-items-center justify-content-center pb-4 pb-lg-0 my-5">
                 <div class="col-lg-7 order-2 order-lg-1 pe-5 pt-4 pt-lg-0 mt-md-5 mt-lg-0 appear-animation"
                     data-appear-animation="fadeInRightShorter">
-                    <h2 class="font-weight-normal text-6 mb-3"><strong class="font-weight-extra-bold">Who</strong> We Are
+                    <h2 class="font-weight-normal text-6 mb-3"><strong
+                            class="font-weight-extra-bold">{{ __('Who') }}</strong> {{ __('We Are') }}
                     </h2>
                     <p class="lead">{{ setting('site.who_we_are') }}</p>
                     {{-- <p class="pb-2 mb-4">Phasellus blandit massa enim. Nullam id varius elit. blandit massa enimariusius. --}}
@@ -159,7 +163,7 @@
             <div class="col">
                 <div class="overflow-hidden mb-3">
                     <h2 class="font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
-                        We Are Here To Help You
+                        {{ __('We Are Here To Help You') }}
                     </h2>
                 </div>
             </div>
@@ -205,4 +209,12 @@
             </div>
         </div>
     </div>
+
+    <section class="section bg-color-grey-scale-1 border-0 py-1">
+        <div class="container-fluid">
+            <div class="text-center m-2 m-lg-5 p-lg-4">
+                <img class="img-fluid img-responsive" src="img/map.png" alt="map">
+            </div>
+        </div>
+    </section>
 @endsection

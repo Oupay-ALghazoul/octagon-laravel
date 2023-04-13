@@ -1,6 +1,23 @@
+@php
+    $locale = Session::get('locale') ?? 'en';
+    $langFlag = 'flag-us';
+    $langName = 'English';
+    switch ($locale) {
+        case 'ar':
+            $langFlag = 'flag-ae';
+            $langName = 'Arabic';
+            break;
+        case 'ru':
+            $langFlag = 'flag-ru';
+            $langName = 'Russian';
+            break;
+    }
+    $services = \App\Models\Service::withTranslation(['ar', 'ru'])->get();
+    app()->setLocale($locale);
+@endphp
 
 <!DOCTYPE html>
-<html>
+<html {{ $locale == 'ar' ? 'dir=rtl' : '' }}>
 
 <head>
 
@@ -36,8 +53,14 @@
     <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/theme-elements.css">
+    @if ($locale == 'ar')
+        <!-- RTL CSS -->
+        <link rel="stylesheet" href="css/rtl-theme.css">
+        <link rel="stylesheet" href="css/rtl-theme-elements.css">
+    @else
+        <link rel="stylesheet" href="css/theme.css">
+        <link rel="stylesheet" href="css/theme-elements.css">
+    @endif
     <link rel="stylesheet" href="css/theme-blog.css">
     <link rel="stylesheet" href="css/theme-shop.css">
 
@@ -94,18 +117,32 @@
                                                 <a class="nav-link" href="#" role="button" id="dropdownLanguage"
                                                     data-bs-toggle="dropdown" aria-haspopup="true"
                                                     aria-expanded="false">
-                                                    <img src="img/blank.gif" class="flag flag-us" alt="English" />
-                                                    English
+                                                    <img src="img/blank.gif" class="flag {{ $langFlag }}"
+                                                        alt="English" />
+                                                    {{ $langName }}
                                                     <i class="fas fa-angle-down"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-end"
                                                     aria-labelledby="dropdownLanguage">
-                                                    <a class="dropdown-item" href="#"><img src="img/blank.gif"
-                                                            class="flag flag-us" alt="English" /> English</a>
-                                                    <a class="dropdown-item" href="#"><img src="img/blank.gif"
-                                                            class="flag flag-ae" alt="English" /> Arabic </a>
-                                                    <a class="dropdown-item" href="#"><img src="img/blank.gif"
-                                                            class="flag flag-ru" alt="English" /> Russian </a>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('change-lang', [
+                                                            'lang' => 'en',
+                                                        ]) }}"><img
+                                                            src="img/blank.gif" class="flag flag-us" alt="English" />
+                                                        English</a>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('change-lang', [
+                                                            'lang' => 'ar',
+                                                        ]) }}"><img
+                                                            src="img/blank.gif" class="flag flag-ae"
+                                                            alt="English" />
+                                                        Arabic </a>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('change-lang', [
+                                                            'lang' => 'ru',
+                                                        ]) }}"><img
+                                                            src="img/blank.gif" class="flag flag-ru"
+                                                            alt="English" /> Russian </a>
                                                 </div>
                                             </li>
                                         </ul>
@@ -137,24 +174,38 @@
                                                 <li class="nav-item">
                                                     <a class="{{ request()->is('index') ? 'active' : '' }}"
                                                         href="index">
-                                                        Home
+                                                        {{ __('Home') }}
                                                     </a>
                                                 </li>
                                                 {{-- <li class="nav-item">
-														<a class="{{(request()->is('about-us')) ? 'active' : '' }}" href="about-us">
-															About us
-														</a>
-													</li> --}}
-                                                {{-- <li class="nav-item">
                                                     <a class="{{ request()->is('services') ? 'active' : '' }}"
                                                         href="services">
-                                                        Services
+                                                        {{__('Services')}} 
                                                     </a>
                                                 </li> --}}
+                                                <li class="nav-item dropdown">
+                                                    <a class="dropdown-item dropdown-toggle {{ request()->is('services') ? 'active' : '' }}" href="#">
+                                                        {{ __('Services') }}
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        @foreach ($services as $service)
+                                                            <li class="dropdown-submenu">
+                                                                <a class="dropdown-item"
+                                                                    href="#">{{ $service->name }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="{{ request()->is('about-us') ? 'active' : '' }}"
+                                                        href="about-us">
+                                                        {{ __('About us') }}
+                                                    </a>
+                                                </li>
                                                 <li class="nav-item">
                                                     <a class="{{ request()->is('contact') ? 'active' : '' }}"
                                                         href="contact">
-                                                        Contact
+                                                        {{ __('Contact') }}
                                                     </a>
                                                 </li>
                                             </ul>
@@ -184,7 +235,7 @@
         <footer id="footer">
             <div class="container">
                 <div class="footer-ribbon">
-                    <span>Get in Touch</span>
+                    <span>{{ __('Get in Touch') }}</span>
                 </div>
                 <div class="row py-5 my-4">
                     <div class="col-md-6 mb-4 mb-lg-0">
@@ -196,11 +247,11 @@
                             magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent
                             venenatis turpis vitae purus semper...</p>
                         <p class="mb-0"><a href="#" class="btn-flat btn-xs text-color-light"><strong
-                                    class="text-2">VIEW MORE</strong><i
+                                    class="text-2">{{ __('VIEW MORE') }}</strong><i
                                     class="fas fa-angle-right p-relative top-1 ps-2"></i></a></p>
                     </div>
                     <div class="col-md-6">
-                        <h5 class="text-3 mb-3">CONTACT US</h5>
+                        <h5 class="text-3 mb-3">{{ __('Contact Us') }}</h5>
                         <div class="row">
                             <div class="col-md-6">
                                 <ul class="list list-icons list-icons-lg">
@@ -208,10 +259,14 @@
                                         <p class="m-0"> {{ setting('site.address') }}</p>
                                     </li>
                                     <li class="mb-1"><i class="fab fa-whatsapp text-color-primary"></i>
-                                        <p class="m-0"><a href="tel:8001234567">{{ setting('site.contact_number') }}</a></p>
+                                        <p class="m-0"><a
+                                                href="tel:8001234567">{{ setting('site.contact_number') }}</a></p>
                                     </li>
                                     <li class="mb-1"><i class="far fa-envelope text-color-primary"></i>
-                                        <p class="m-0"><a href="mailto:mail@example.com">{{ setting('site.contact_email') }} </a></p>
+                                        <p class="m-0"><a
+                                                href="mailto:mail@example.com">{{ setting('site.contact_email') }}
+                                            </a>
+                                        </p>
                                     </li>
                                 </ul>
                             </div>
@@ -222,7 +277,7 @@
                                     <li><i class="fas fa-angle-right"></i><a href="sitemap.html"
                                             class="link-hover-style-1 ms-1"> Sitemap</a></li> --}}
                                     <li><i class="fas fa-angle-right"></i><a href="contact-us"
-                                            class="link-hover-style-1 ms-1"> Contact Us</a></li>
+                                            class="link-hover-style-1 ms-1"> {{ __('Contact Us') }} </a></li>
                                 </ul>
                             </div>
                         </div>
@@ -233,7 +288,7 @@
                 <div class="container py-2">
                     <div class="row py-4">
                         <div class="col d-flex align-items-center justify-content-center">
-                            <p>© Copyright 2023. All Rights Reserved.</p>
+                            <p>© {{ __('Copyright 2023. All Rights Reserved') }}</p>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,15 @@ Route::get('/services', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/lang/{lang?}', function ($lang = 'en') {
+    Session::put('locale', $lang);
+    // App::setLocale('ar');
+    // app()->setLocale($lang);
+    // app()->setLocale('ar');
+    // dd(app()->getLocale());
+    return redirect()->back();
+})->name('change-lang');
 
 Route::group(['prefix' => 'admin-94'], function () {
     Voyager::routes();
