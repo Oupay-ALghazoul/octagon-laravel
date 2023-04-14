@@ -14,46 +14,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-dark">{{ __('About us') }}</h1>
+                    <h1 class="font-weight-bold text-dark">{{ __('Our Value Proposition') }}</h1>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb d-block text-center">
-                        <li><a href="#">{{ __('About us') }}</a></li>
-                        <li class="active">{{ __('Home') }}</li>
+                        <li><a href="#">{{ __('Value Proposition') }}</a></li>
+                        <li class="active">{{ __('About us') }}</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-default bg-color-white border-0 mb-5 appear-animation" data-appear-animation="fadeIn"
-        data-appear-animation-delay="750">
+    <section class="section section-default bg-color-light-scale-1 border-0 mb-5">
         <div class="container py-4">
-
-            <div class="row align-items-center">
-                <div class="col-md-6 appear-animation" data-appear-animation="fadeInLeftShorter"
-                    data-appear-animation-delay="1000">
-                    <div class="owl-carousel owl-theme nav-inside mb-0"
-                        data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 6000, 'loop': true}">
-                        @foreach (json_decode($aboutUs->image) as $img)
-                            <div>
-                                <img alt="" class="img-fluid" src="{{ Voyager::image($img) }}">
-                            </div>
-                        @endforeach
+            {{-- <h2 class="text-color-dark font-weight-bold text-center mb-0 pt-2">{{ __('Our Value Proposition') }}</strong>
+            </h2> --}}
+            <p class="text-center text-5 mt-3 mb-5">We believe that effective and successful client wealth management begins long
+                before investment</p>
+            @foreach ($values as $val)
+                <article class="post post-large">
+                    <div class="post-content">
+                        <h2 class="font-weight-semibold text-6 line-height-3 mb-3">{{ $val->title }}</h2>
+                        <p>{!! $val->description !!}</p>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="overflow-hidden mb-2">
-                        <h2 class="text-color-dark font-weight-normal text-7 mb-0 pt-0 mt-0 appear-animation"
-                            data-appear-animation="maskUp" data-appear-animation-delay="1200">{{ __('Who') }} <strong
-                                class="font-weight-extra-bold">{{ __('We Are') }}</strong></h2>
-                    </div>
-                    <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1400"
-                        HTML>
-                        {!! $aboutUs->text !!}
-                    </div>
-                </div>
-            </div>
+                </article>
+            @endforeach
 
         </div>
     </section>

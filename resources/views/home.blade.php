@@ -210,11 +210,4 @@
         </div>
     </div>
 
-    <section class="section bg-color-grey-scale-1 border-0 py-1">
-        <div class="container-fluid">
-            <div class="text-center m-2 m-lg-5 p-lg-4">
-                <img class="img-fluid img-responsive" src="img/map.png" alt="map">
-            </div>
-        </div>
-    </section>
 @endsection

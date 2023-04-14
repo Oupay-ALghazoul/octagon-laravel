@@ -27,8 +27,28 @@ Route::get('/about-us', function () {
     return view('about-us');
 });
 
+Route::get('/founders', function () {
+    return view('founders');
+});
+
+Route::get('/value-proposition', function () {
+    return view('value-proposition');
+});
+
+Route::get('/global-footprin', function () {
+    return view('global-footprin');
+});
+
 Route::get('/services', function () {
     return view('services');
+});
+
+Route::get('/services', function () {
+    return view('services');
+});
+
+Route::get('/sub-services/{id}', function () {
+    return view('sub-service');
 });
 
 Route::get('/contact', function () {

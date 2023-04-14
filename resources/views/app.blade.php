@@ -12,7 +12,11 @@
             $langName = 'Russian';
             break;
     }
-    $services = \App\Models\Service::withTranslation(['ar', 'ru'])->get();
+    $services = \App\Models\Service::withTranslation(['ar', 'ru'])
+        ->with('subCategories')
+        ->get();
+    $aboutUs = \App\Models\AboutUs::withTranslations(['ar', 'ru'])->first();
+
     app()->setLocale($locale);
 @endphp
 
@@ -27,12 +31,12 @@
 
     <title>Octagon for Consultancy</title>
 
-    <meta name="keywords" content="WebSite Template" />
+    <meta name="keywords" content="Octagon WebSite, Consultancy" />
     <meta name="description" content="Octagon - Website for Consultancy">
     <meta name="author" content="Oupay Alghazoul">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon" />
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
     <!-- Mobile Metas -->
@@ -44,39 +48,39 @@
         rel="stylesheet" type="text/css">
 
     <!-- Vendor CSS -->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="vendor/animate/animate.compat.css">
-    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/animate/animate.compat.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/simple-line-icons/css/simple-line-icons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/owl.carousel/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/owl.carousel/assets/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('vendor/magnific-popup/magnific-popup.min.css')}}">
 
     <!-- Theme CSS -->
     @if ($locale == 'ar')
         <!-- RTL CSS -->
-        <link rel="stylesheet" href="css/rtl-theme.css">
-        <link rel="stylesheet" href="css/rtl-theme-elements.css">
+        <link rel="stylesheet" href="{{asset('css/rtl-theme.css')}}">
+        <link rel="stylesheet" href="{{asset('css/rtl-theme-elements.css')}}">
     @else
-        <link rel="stylesheet" href="css/theme.css">
-        <link rel="stylesheet" href="css/theme-elements.css">
+        <link rel="stylesheet" href="{{asset('css/theme.css')}}">
+        <link rel="stylesheet" href="{{asset('css/theme-elements.css')}}">
     @endif
-    <link rel="stylesheet" href="css/theme-blog.css">
-    <link rel="stylesheet" href="css/theme-shop.css">
+    <link rel="stylesheet" href="{{asset('css/theme-blog.css')}}">
+    <link rel="stylesheet" href="{{asset('css/theme-shop.css')}}">
 
     <!-- Skin CSS -->
-    <link id="skinCSS" rel="stylesheet" href="css/skins/default.css">
+    <link id="skinCSS" rel="stylesheet" href="{{asset('css/skins/default.css')}}">
 
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 
     <!-- Head Libs -->
-    <script src="vendor/modernizr/modernizr.min.js"></script>
+    <script src="{{asset('vendor/modernizr/modernizr.min.js')}}"></script>
 
 </head>
 
 <body data-plugin-page-transition>
-    <div class="body">
+    <div class="body ACaslonPro-Regular-font">
         <header id="header" class="header-effect-shrink"
             data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
             <div class="header-body border-color-primary border-bottom-0">
@@ -117,7 +121,7 @@
                                                 <a class="nav-link" href="#" role="button" id="dropdownLanguage"
                                                     data-bs-toggle="dropdown" aria-haspopup="true"
                                                     aria-expanded="false">
-                                                    <img src="img/blank.gif" class="flag {{ $langFlag }}"
+                                                    <img src="{{asset('img/blank.gif')}}" class="flag {{ $langFlag }}"
                                                         alt="English" />
                                                     {{ $langName }}
                                                     <i class="fas fa-angle-down"></i>
@@ -128,20 +132,20 @@
                                                         href="{{ route('change-lang', [
                                                             'lang' => 'en',
                                                         ]) }}"><img
-                                                            src="img/blank.gif" class="flag flag-us" alt="English" />
+                                                            src="{{asset('img/blank.gif')}}" class="flag flag-us" alt="English" />
                                                         English</a>
                                                     <a class="dropdown-item"
                                                         href="{{ route('change-lang', [
                                                             'lang' => 'ar',
                                                         ]) }}"><img
-                                                            src="img/blank.gif" class="flag flag-ae"
+                                                            src="{{asset('img/blank.gif')}}" class="flag flag-ae"
                                                             alt="English" />
                                                         Arabic </a>
                                                     <a class="dropdown-item"
                                                         href="{{ route('change-lang', [
                                                             'lang' => 'ru',
                                                         ]) }}"><img
-                                                            src="img/blank.gif" class="flag flag-ru"
+                                                            src="{{asset('img/blank.gif')}}" class="flag flag-ru"
                                                             alt="English" /> Russian </a>
                                                 </div>
                                             </li>
@@ -159,7 +163,7 @@
                                 <div class="header-logo">
                                     <a href="index.html">
                                         <img alt="Octagon" width="160" height="48" data-sticky-width="82"
-                                            data-sticky-height="40" src="img/logos/octagon-logo.svg">
+                                            data-sticky-height="40" src="{{asset('img/logos/octagon-logo.svg')}}">
                                     </a>
                                 </div>
                             </div>
@@ -173,38 +177,71 @@
                                             <ul class="nav nav-pills" id="mainNav">
                                                 <li class="nav-item">
                                                     <a class="{{ request()->is('index') ? 'active' : '' }}"
-                                                        href="index">
+                                                        href="/index">
                                                         {{ __('Home') }}
                                                     </a>
                                                 </li>
-                                                {{-- <li class="nav-item">
-                                                    <a class="{{ request()->is('services') ? 'active' : '' }}"
-                                                        href="services">
-                                                        {{__('Services')}} 
-                                                    </a>
-                                                </li> --}}
                                                 <li class="nav-item dropdown">
-                                                    <a class="dropdown-item dropdown-toggle {{ request()->is('services') ? 'active' : '' }}" href="#">
+                                                    <a class="dropdown-item dropdown-toggle {{ request()->is('services') ? 'active' : '' }}"
+                                                        href="#">
                                                         {{ __('Services') }}
                                                     </a>
                                                     <ul class="dropdown-menu">
                                                         @foreach ($services as $service)
                                                             <li class="dropdown-submenu">
                                                                 <a class="dropdown-item"
-                                                                    href="#">{{ $service->name }}</a>
+                                                                    href="javascript:void(0);">{{ $service->name }}
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                    @foreach ($service->subCategories as $subCategory)
+                                                                        <a class="dropdown-item"
+                                                                            href="/{{'sub-services/' . $subCategory->id}}">{{ $subCategory->title }}
+                                                                        </a>
+                                                                    @endforeach
+                                                                </ul>
                                                             </li>
                                                         @endforeach
                                                     </ul>
                                                 </li>
-                                                <li class="nav-item">
-                                                    <a class="{{ request()->is('about-us') ? 'active' : '' }}"
+                                                <li class="nav-item dropdown">
+                                                    {{-- <a class="{{ request()->is('about-us') ? 'active' : '' }}"
                                                         href="about-us">
                                                         {{ __('About us') }}
+                                                    </a> --}}
+                                                    <a class="dropdown-item dropdown-toggle {{ request()->is('about-us', 'founders', 'value-proposition', 'global-footprin') ? 'active' : '' }}"
+                                                        href="#">
+                                                        {{ __('About us') }}
                                                     </a>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="dropdown-submenu">
+                                                            <a class="dropdown-item {{ request()->is('about-us') ? 'active' : '' }}"
+                                                                href="/about-us">
+                                                                {{ __('About octagon') }}
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-submenu">
+                                                            <a class="dropdown-item {{ request()->is('founders') ? 'active' : '' }}"
+                                                                href="/founders">
+                                                                {{ __('Founders') }}
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-submenu">
+                                                            <a class="dropdown-item {{ request()->is('value-proposition') ? 'active' : '' }}"
+                                                                href="/value-proposition">
+                                                                {{ __('Value Proposition') }}
+                                                            </a>
+                                                        </li>
+                                                        <li class="dropdown-submenu">
+                                                            <a class="dropdown-item {{ request()->is('global-footprin') ? 'active' : '' }}"
+                                                                href="/global-footprin">
+                                                                {{ __('Global Footprint') }}
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="{{ request()->is('contact') ? 'active' : '' }}"
-                                                        href="contact">
+                                                        href="/contact">
                                                         {{ __('Contact') }}
                                                     </a>
                                                 </li>
@@ -240,12 +277,10 @@
                 <div class="row py-5 my-4">
                     <div class="col-md-6 mb-4 mb-lg-0">
                         <a href="index.html" class="logo pe-0 pe-lg-3">
-                            <img alt="Octagon Website" src="img/logos/octagon-logo.svg" class="opacity-7 bottom-4"
+                            <img alt="Octagon Website" src="{{asset('img/logos/octagon-logo.svg')}}" class="opacity-7 bottom-4"
                                 height="68">
                         </a>
-                        <p class="mt-2 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar
-                            magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent
-                            venenatis turpis vitae purus semper...</p>
+                        <p class="mt-2 mb-2">{!! $aboutUs->text !!}</p>
                         <p class="mb-0"><a href="#" class="btn-flat btn-xs text-color-light"><strong
                                     class="text-2">{{ __('VIEW MORE') }}</strong><i
                                     class="fas fa-angle-right p-relative top-1 ps-2"></i></a></p>
@@ -297,16 +332,16 @@
     </div>
 
     <!-- Vendor -->
-    <script src="vendor/plugins/js/plugins.min.js"></script>
+    <script src="{{asset('vendor/plugins/js/plugins.min.js')}}"></script>
 
     <!-- Theme Base, Components and Settings -->
-    <script src="js/theme.js"></script>
+    <script src="{{asset('js/theme.js')}}"></script>
 
     <!-- Theme Custom -->
-    <script src="js/custom.js"></script>
+    <script src="{{asset('js/custom.js')}}"></script>
 
     <!-- Theme Initialization Files -->
-    <script src="js/theme.init.js"></script>
+    <script src="{{asset('js/theme.init.js')}}"></script>
 
 </body>
 
