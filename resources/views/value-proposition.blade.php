@@ -26,10 +26,78 @@
         </div>
     </section>
 
-    <section class="section section-default bg-color-light-scale-1 border-0 mb-5">
+    
+    <div class="container py-4">
+
+        @foreach ($values as $val)
+            <div class="row {{ $loop->index % 2 != 0 ? 'd-none' : ' ' }}">
+                <div class="col-md-7 order-2">
+                    <div class="overflow-hidden">
+                        <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation"
+                            data-appear-animation="maskUp" data-appear-animation-delay="300">{{ $val->title }}</h2>
+                    </div>
+                    <div class="overflow-hidden mb-3">
+                        <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation"
+                            data-appear-animation="maskUp" data-appear-animation-delay="500">
+                            {{-- {{ $founder->job_title }} --}}
+                        </p>
+                    </div>
+                    <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
+                        data-appear-animation-delay="700">{!! $val->description !!}</p>
+                    <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter"
+                        data-appear-animation-delay="900">
+                    <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
+                        data-appear-animation-delay="1000">
+                    </div>
+                </div>
+                <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation"
+                    data-appear-animation="fadeInRightShorter">
+                    <img src="{{ Voyager::image($val->image) }}" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            {{--  --}}
+
+            <div class="row {{ $loop->index % 2 == 0 ? 'd-none' : ' ' }}">
+                <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation"
+                    data-appear-animation="fadeInLeftShorter">
+                    <img src="{{ Voyager::image($val->image) }}" class="img-fluid" alt="">
+                </div>
+                <div class="col-md-7 order-2">
+                    <div class="overflow-hidden">
+                        <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation"
+                            data-appear-animation="maskUp" data-appear-animation-delay="300">{{ $val->title }}</h2>
+                    </div>
+                    <div class="overflow-hidden mb-3">
+                        <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation"
+                            data-appear-animation="maskUp" data-appear-animation-delay="500">
+                        </p>
+                    </div>
+                    <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
+                        data-appear-animation-delay="700">{!! $val->description !!}</p>
+                    <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter"
+                        data-appear-animation-delay="900">
+                    <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
+                        data-appear-animation-delay="1000">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row {{ $loop->last ? 'd-none' : '' }}">
+                <div class="col">
+                    <hr class="solid my-5">
+                </div>
+            </div>
+        @endforeach
+
+    </div>
+
+
+    {{-- <section class="section section-default bg-color-light-scale-1 border-0 mb-5">
         <div class="container py-4">
-            {{-- <h2 class="text-color-dark font-weight-bold text-center mb-0 pt-2">{{ __('Our Value Proposition') }}</strong>
-            </h2> --}}
+            <h2 class="text-color-dark font-weight-bold text-center mb-0 pt-2">{{ __('Our Value Proposition') }}</strong>
+            </h2>
             <p class="text-center text-5 mt-3 mb-5">We believe that effective and successful client wealth management begins long
                 before investment</p>
             @foreach ($values as $val)
@@ -42,7 +110,7 @@
             @endforeach
 
         </div>
-    </section>
+    </section> --}}
 
     <div class="container py-5 my-4">
         <div class="row text-center py-3">

@@ -10,15 +10,16 @@
 @extends('app')
 @section('content')
     <section class="page-header page-header-modern bg-color-light-scale-1 page-header-lg">
+    {{-- <section style="background-size: cover; background-image: url({{ Voyager::image($subCategory->image) }});" class="page-header page-header-modern bg-color-light-scale-s1 page-header-lg"> --}}
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-dark">{{ __('Category') }}</h1>
+                    <h1 class="font-weight-bold text-dark">{{$subCategory->title}}</h1>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb d-block text-center">
-                        <li><a href="#">{{ __('Sub Category') }}</a></li>
                         <li class="active">{{ __('Services') }}</li>
+                        <li><a href="#">{{$subCategory->service->name}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -46,7 +47,7 @@
                 </div>
             </div>
             <div class="col-lg-2 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
-                <a href="#" class="btn btn-modern btn-dark mt-1">Get a Quote!</a>
+                {{-- <a href="#" class="btn btn-modern btn-dark mt-1">Get a Quote!</a> --}}
             </div>
         </div>
 

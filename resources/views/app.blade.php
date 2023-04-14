@@ -15,8 +15,6 @@
     $services = \App\Models\Service::withTranslation(['ar', 'ru'])
         ->with('subCategories')
         ->get();
-    $aboutUs = \App\Models\AboutUs::withTranslations(['ar', 'ru'])->first();
-
     app()->setLocale($locale);
 @endphp
 
@@ -177,7 +175,7 @@
                                             <ul class="nav nav-pills" id="mainNav">
                                                 <li class="nav-item">
                                                     <a class="{{ request()->is('index') ? 'active' : '' }}"
-                                                        href="/index">
+                                                        href="{{url('index')}}">
                                                         {{ __('Home') }}
                                                     </a>
                                                 </li>
@@ -195,7 +193,7 @@
                                                                 <ul class="dropdown-menu">
                                                                     @foreach ($service->subCategories as $subCategory)
                                                                         <a class="dropdown-item"
-                                                                            href="/{{'sub-services/' . $subCategory->id}}">{{ $subCategory->title }}
+                                                                            href="{{url('sub-services/' . $subCategory->id)}}">{{ $subCategory->title }}
                                                                         </a>
                                                                     @endforeach
                                                                 </ul>
@@ -205,7 +203,7 @@
                                                 </li>
                                                 <li class="nav-item dropdown">
                                                     {{-- <a class="{{ request()->is('about-us') ? 'active' : '' }}"
-                                                        href="about-us">
+                                                        href="#">
                                                         {{ __('About us') }}
                                                     </a> --}}
                                                     <a class="dropdown-item dropdown-toggle {{ request()->is('about-us', 'founders', 'value-proposition', 'global-footprin') ? 'active' : '' }}"
@@ -215,25 +213,25 @@
                                                     <ul class="dropdown-menu">
                                                         <li class="dropdown-submenu">
                                                             <a class="dropdown-item {{ request()->is('about-us') ? 'active' : '' }}"
-                                                                href="/about-us">
+                                                                href="{{url('about-us')}}">
                                                                 {{ __('About octagon') }}
                                                             </a>
                                                         </li>
                                                         <li class="dropdown-submenu">
                                                             <a class="dropdown-item {{ request()->is('founders') ? 'active' : '' }}"
-                                                                href="/founders">
+                                                                href="{{url('founders')}}">
                                                                 {{ __('Founders') }}
                                                             </a>
                                                         </li>
                                                         <li class="dropdown-submenu">
                                                             <a class="dropdown-item {{ request()->is('value-proposition') ? 'active' : '' }}"
-                                                                href="/value-proposition">
+                                                                href="{{url('value-proposition')}}">
                                                                 {{ __('Value Proposition') }}
                                                             </a>
                                                         </li>
                                                         <li class="dropdown-submenu">
                                                             <a class="dropdown-item {{ request()->is('global-footprin') ? 'active' : '' }}"
-                                                                href="/global-footprin">
+                                                                href="{{url('global-footprin')}}">
                                                                 {{ __('Global Footprint') }}
                                                             </a>
                                                         </li>
@@ -241,7 +239,7 @@
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="{{ request()->is('contact') ? 'active' : '' }}"
-                                                        href="/contact">
+                                                        href="{{url('contact')}}">
                                                         {{ __('Contact') }}
                                                     </a>
                                                 </li>
@@ -275,20 +273,21 @@
                     <span>{{ __('Get in Touch') }}</span>
                 </div>
                 <div class="row py-5 my-4">
-                    <div class="col-md-6 mb-4 mb-lg-0">
+                    <div class="col-md-8 mb-4 mb-lg-0">
                         <a href="index.html" class="logo pe-0 pe-lg-3">
                             <img alt="Octagon Website" src="{{asset('img/logos/octagon-logo.svg')}}" class="opacity-7 bottom-4"
                                 height="68">
                         </a>
-                        <p class="mt-2 mb-2">{!! $aboutUs->text !!}</p>
+                        <p class="mt-2 mb-2">International wealth structure and family office services tailor-made for you.
+Our private clients trust OCTAGON to protect their assets and plan long-term wealth for future generations.</p>
                         <p class="mb-0"><a href="#" class="btn-flat btn-xs text-color-light"><strong
                                     class="text-2">{{ __('VIEW MORE') }}</strong><i
                                     class="fas fa-angle-right p-relative top-1 ps-2"></i></a></p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <h5 class="text-3 mb-3">{{ __('Contact Us') }}</h5>
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <ul class="list list-icons list-icons-lg">
                                     <li class="mb-1"><i class="far fa-dot-circle text-color-primary"></i>
                                         <p class="m-0"> {{ setting('site.address') }}</p>
@@ -305,16 +304,16 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-md-6">
-                                <ul class="list list-icons list-icons-sm">
-                                    {{-- <li><i class="fas fa-angle-right"></i><a href="page-faq.html"
-                                            class="link-hover-style-1 ms-1"> FAQ's</a></li>
-                                    <li><i class="fas fa-angle-right"></i><a href="sitemap.html"
-                                            class="link-hover-style-1 ms-1"> Sitemap</a></li> --}}
-                                    <li><i class="fas fa-angle-right"></i><a href="contact-us"
-                                            class="link-hover-style-1 ms-1"> {{ __('Contact Us') }} </a></li>
-                                </ul>
-                            </div>
+                            <!--<div class="col-md-6">-->
+                            <!--    <ul class="list list-icons list-icons-sm">-->
+                            <!--        {{-- <li><i class="fas fa-angle-right"></i><a href="page-faq.html"-->
+                            <!--                class="link-hover-style-1 ms-1"> FAQ's</a></li>-->
+                            <!--        <li><i class="fas fa-angle-right"></i><a href="sitemap.html"-->
+                            <!--                class="link-hover-style-1 ms-1"> Sitemap</a></li> --}}-->
+                            <!--        <li><i class="fas fa-angle-right"></i><a href="contact-us"-->
+                            <!--                class="link-hover-style-1 ms-1"> {{ __('Contact Us') }} </a></li>-->
+                            <!--    </ul>-->
+                            <!--</div>-->
                         </div>
                     </div>
                 </div>

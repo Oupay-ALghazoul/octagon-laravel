@@ -38,10 +38,10 @@
                                             class="text-4-5 text-color-light font-weight-light opacity-7 text-center mb-5">
                                             {{ $slide->getTranslatedAttribute('sub_title', $locale, 'en') }}
                                         </p>
-                                        <a href="#"
-                                            class="btn btn-light btn-outline text-color-light text-color-hover-dark font-weight-bold text-3 btn-px-5 py-3 appear-animation"
-                                            data-appear-animation="fadeInUpShorter" data-appear-animation-delay="2500"
-                                            data-plugin-options="{'minWindowWidth': 0}">GEST STARTED NOW!</a>
+                                        <!--<a href="#"-->
+                                        <!--    class="btn btn-light btn-outline text-color-light text-color-hover-dark font-weight-bold text-3 btn-px-5 py-3 appear-animation"-->
+                                        <!--    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="2500"-->
+                                        <!--    data-plugin-options="{'minWindowWidth': 0}">GEST STARTED NOW!</a>-->
                                     </div>
                                 </div>
                             </div>
@@ -70,9 +70,9 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="get-started text-start text-lg-end">
-                        <a href="#" class="btn btn-primary btn-lg text-3 font-weight-semibold btn-py-2 px-4">Get
+                        <a href="{{url('contact')}}" class="btn btn-primary btn-lg text-3 font-weight-semibold btn-py-2 px-4">Get
                             Started Now</a>
-                        <div class="learn-more">or <a href="index.html" class="font-weight-bold">{{ __('learn more') }}.</a>
+                        <!--<div class="learn-more">or <a href="index.html" class="font-weight-bold">{{ __('learn more') }}.</a>-->
                         </div>
                     </div>
                 </div>
@@ -146,9 +146,9 @@
                     <p class="lead">{{ setting('site.who_we_are') }}</p>
                     {{-- <p class="pb-2 mb-4">Phasellus blandit massa enim. Nullam id varius elit. blandit massa enimariusius. --}}
                     </p>
-                    <a href="#" class="btn btn-dark font-weight-semibold btn-py-2 px-5">Our History</a>
+                    <!--<a href="#" class="btn btn-dark font-weight-semibold btn-py-2 px-5">Our History</a>-->
                 </div>
-                <div class="col-9 col-lg-3 order-1 order-lg-2 scale-6 pb-5 pb-lg-0 mt-0 mt-md-4 mb-5 mb-lg-0">
+                <div class="col-9 col-lg-3 order-1 order-lg-2 scale-6_ pb-5 pb-lg-0 mt-0 mt-md-4 mb-5 mb-lg-0">
                     <img class="img-fluid appear-animation" src="img/home/who-we-are.jpeg"
                         data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300"
                         data-plugin-options="{'accY': -400}" alt="">
