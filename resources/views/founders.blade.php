@@ -45,9 +45,9 @@
                             data-appear-animation="maskUp" data-appear-animation-delay="200"
                             style="animation-delay: 200ms;">
                             With over 40 years of combined experience in corporate finance and investments, they have worked
-                            with some of the most demanding clients in the industry.
+                            with some of the most demanding clients in the multiple industries.
                             <br>
-                            Their expertise is now available to our clients who are looking for guidance and support in
+                            Our expertise is now available to our clients who are looking for guidance and support in
                             their
                             financial endeavors.
                         </p>

@@ -128,7 +128,9 @@
 
     </div>
 
-    <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
-    {{-- <div id="googlemaps" class="google-map m-0 appear-animation" data-appear-animation="fadeIn"
-    data-appear-animation-delay="300" style="height:450px;"></div> --}}
+    <div class="container-fluid">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.002902132003!2d55.170899!3d25.1017631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b7202f4ae41%3A0x12533f787f8d656!2sdu%20-%20Salam%20Tower!5e0!3m2!1sen!2sfr!4v1681722740275!5m2!1sen!2sfr" height="450" style="border:0; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3612.994459964501!2d55.1711540222168!3d25.102048873901367!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f133c2faae9a7%3A0xd41ce2c9f5ec768d!2sCarrefour!5e0!3m2!1sen!2seg!4v1681485005456!5m2!1sen!2seg" height="450" style="border:0; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
+    </div>
+
 @endsection

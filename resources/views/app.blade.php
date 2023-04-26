@@ -214,7 +214,7 @@
                                                         <li class="dropdown-submenu">
                                                             <a class="dropdown-item {{ request()->is('about-us') ? 'active' : '' }}"
                                                                 href="{{url('about-us')}}">
-                                                                {{ __('About octagon') }}
+                                                                {{ __('About Octagon') }}
                                                             </a>
                                                         </li>
                                                         <li class="dropdown-submenu">
@@ -235,6 +235,12 @@
                                                                 {{ __('Global Footprint') }}
                                                             </a>
                                                         </li>
+                                                        {{-- <li class="dropdown-submenu">
+                                                            <a target="_blank" class="dropdown-item"
+                                                                href="https://www.google.com/maps/search/du%20Flagship%20Store/@25.102048873901367,55.1711540222168,17z?hl=en">
+                                                                {{ __('Location on the map') }}
+                                                            </a>
+                                                        </li> --}}
                                                     </ul>
                                                 </li>
                                                 <li class="nav-item">

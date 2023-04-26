@@ -26,7 +26,7 @@
         </div>
     </section>
 
-    <div class="container pb-1">
+    <div class="container pb-1 d-none">
 
         <div class="row pt-4">
             <div class="col">
@@ -47,7 +47,6 @@
                 </div>
             </div>
             <div class="col-lg-2 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="500">
-                {{-- <a href="#" class="btn btn-modern btn-dark mt-1">Get a Quote!</a> --}}
             </div>
         </div>
 
