@@ -180,28 +180,6 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item dropdown">
-                                                    <a class="dropdown-item dropdown-toggle {{ request()->is('services') ? 'active' : '' }}"
-                                                        href="#">
-                                                        {{ __('Services') }}
-                                                    </a>
-                                                    <ul class="dropdown-menu">
-                                                        @foreach ($services as $service)
-                                                            <li class="dropdown-submenu">
-                                                                <a class="dropdown-item"
-                                                                    href="javascript:void(0);">{{ $service->name }}
-                                                                </a>
-                                                                <ul class="dropdown-menu">
-                                                                    @foreach ($service->subCategories as $subCategory)
-                                                                        <a class="dropdown-item"
-                                                                            href="{{url('sub-services/' . $subCategory->id)}}">{{ $subCategory->title }}
-                                                                        </a>
-                                                                    @endforeach
-                                                                </ul>
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item dropdown">
                                                     {{-- <a class="{{ request()->is('about-us') ? 'active' : '' }}"
                                                         href="#">
                                                         {{ __('About us') }}
@@ -243,10 +221,32 @@
                                                         </li> --}}
                                                     </ul>
                                                 </li>
+                                                <li class="nav-item dropdown">
+                                                    <a class="dropdown-item dropdown-toggle {{ request()->is('services') ? 'active' : '' }}"
+                                                        href="#">
+                                                        {{ __('Services') }}
+                                                    </a>
+                                                    <ul class="dropdown-menu">
+                                                        @foreach ($services as $service)
+                                                            <li class="dropdown-submenu">
+                                                                <a class="dropdown-item"
+                                                                    href="javascript:void(0);">{{ $service->name }}
+                                                                </a>
+                                                                <ul class="dropdown-menu">
+                                                                    @foreach ($service->subCategories as $subCategory)
+                                                                        <a class="dropdown-item"
+                                                                            href="{{url('sub-services/' . $subCategory->id)}}">{{ $subCategory->title }}
+                                                                        </a>
+                                                                    @endforeach
+                                                                </ul>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
                                                 <li class="nav-item">
                                                     <a class="{{ request()->is('contact') ? 'active' : '' }}"
                                                         href="{{url('contact')}}">
-                                                        {{ __('Contact') }}
+                                                        {{ __('Contact Us') }}
                                                     </a>
                                                 </li>
                                             </ul>
