@@ -14,11 +14,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-dark">{{ __('Global Footprin') }}</h1>
+                    <h1 class="font-weight-bold text-dark">{{ __('Global Partners') }}</h1>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb d-block text-center">
-                        <li><a href="#">{{ __('Global Footprin') }}</a></li>
+                        <li><a href="#">{{ __('Global Partners') }}</a></li>
                         <li class="active">{{ __('About us') }}</li>
                     </ul>
                 </div>

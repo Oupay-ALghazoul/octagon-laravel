@@ -14,11 +14,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-dark">{{ __('About us') }}</h1>
+                    <h1 class="font-weight-bold text-dark">{{ __('About Us') }}</h1>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb d-block text-center">
-                        <li><a href="#">{{ __('About us') }}</a></li>
+                        <li><a href="#">{{ __('About Us') }}</a></li>
                         <li class="active">{{ __('Home') }}</li>
                     </ul>
                 </div>
@@ -45,8 +45,8 @@
                 <div class="col-md-6">
                     <div class="overflow-hidden mb-2">
                         <h2 class="text-color-dark font-weight-normal text-7 mb-0 pt-0 mt-0 appear-animation"
-                            data-appear-animation="maskUp" data-appear-animation-delay="1200">{{ __('Who') }} <strong
-                                class="font-weight-extra-bold">{{ __('We Are') }}</strong></h2>
+                            data-appear-animation="maskUp" data-appear-animation-delay="1200"><strong
+                                class="font-weight-extra-bold">{{ __('Who We Are') }}</strong></h2>
                     </div>
                     <div class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1400"
                         HTML>
@@ -69,7 +69,7 @@
                         <b>especially</b>
                         <b>extremely</b>
                     </span>
-                    <span> Consulting.</span>
+                    <span> Consulting</span>
                 </h1>
             </div>
         </div>

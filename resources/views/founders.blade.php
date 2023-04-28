@@ -37,7 +37,6 @@
                             @foreach ($founders as $founder)
                                 {{ $founder->name }} {{ !$loop->last ? 'and' : '' }}
                             @endforeach
-                            .
                         </h3>
                     </div>
                     <div class="overflow-hidden mb-3">
@@ -77,9 +76,12 @@
                             data-appear-animation-delay="900">
                         <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="1000">
-                            <!--<div class="col-lg-6">-->
-                            <!--    <a href="#" class="btn btn-modern btn-dark mt-3">Get In Touch</a>-->
-                            <!--</div>-->
+                            <div class="col-lg-6">
+                                <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;" href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
+                                    Connect on
+                                    <i style="font-size: 18px;" class="fab fa-linkedin-in p-1 mx-1"></i>
+                                </a>
+                            </div>
                             {{-- <div class="col-sm-6 text-lg-end my-4 my-lg-0">
                             <strong class="text-uppercase text-1 me-3 text-dark">follow me</strong>
                             <ul class="social-icons float-lg-end">
@@ -120,17 +122,12 @@
                             data-appear-animation-delay="900">
                         <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="1000">
-                            <!--<div class="col-lg-6">-->
-                            <!--    <a href="#" class="btn btn-modern btn-dark mt-3">Get In Touch</a>-->
-                            <!--</div>-->
-                            {{-- <div class="col-sm-6 text-lg-end my-4 my-lg-0">
-                            <strong class="text-uppercase text-1 me-3 text-dark">follow me</strong>
-                            <ul class="social-icons float-lg-end">
-                                <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div> --}}
+                            <div class="col-lg-6">
+                                <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;" href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
+                                    Connect on
+                                    <i style="font-size: 18px;" class="fab fa-linkedin-in p-1 mx-1"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -175,7 +172,7 @@
                         <b>especially</b>
                         <b>extremely</b>
                     </span>
-                    <span> Consulting.</span>
+                    <span> Consulting</span>
                 </h1>
             </div>
         </div>

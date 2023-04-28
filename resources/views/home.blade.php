@@ -93,7 +93,7 @@
                         <b>especially</b>
                         <b>extremely</b>
                     </span>
-                    <span> Consulting.</span>
+                    <span> Consulting</span>
                 </h1>
                 {{-- <p class="lead appear-animation mb-0" data-appear-animation="fadeInUpShorter"
                     data-appear-animation-delay="300">
@@ -141,7 +141,7 @@
                 <div class="col-lg-7 order-2 order-lg-1 pe-5 pt-4 pt-lg-0 mt-md-5 mt-lg-0 appear-animation"
                     data-appear-animation="fadeInRightShorter">
                     <h2 class="font-weight-normal text-6 mb-3"><strong
-                            class="font-weight-extra-bold">{{ __('Who') }}</strong> {{ __('We Are') }}
+                            class="font-weight-extra-bold">{{ __('Who We Are') }}</strong>
                     </h2>
                     <p class="lead">{{ setting('site.who_we_are') }}</p>
                     {{-- <p class="pb-2 mb-4">Phasellus blandit massa enim. Nullam id varius elit. blandit massa enimariusius. --}}

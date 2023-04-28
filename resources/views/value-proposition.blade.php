@@ -123,7 +123,7 @@
                         <b>especially</b>
                         <b>extremely</b>
                     </span>
-                    <span> Consulting.</span>
+                    <span> Consulting</span>
                 </h1>
             </div>
         </div>

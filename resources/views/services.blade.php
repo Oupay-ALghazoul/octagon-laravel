@@ -212,7 +212,7 @@
                         <b>especially</b>
                         <b>extremely</b>
                     </span>
-                    <span> Consulting.</span>
+                    <span> Consulting</span>
                 </h1>
                 {{-- <p class="lead appear-animation mb-0" data-appear-animation="fadeInUpShorter"
                     data-appear-animation-delay="300">

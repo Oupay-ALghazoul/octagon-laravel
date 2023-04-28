@@ -232,7 +232,7 @@
                                                         <li class="dropdown-submenu">
                                                             <a class="dropdown-item {{ request()->is('global-footprin') ? 'active' : '' }}"
                                                                 href="{{url('global-footprin')}}">
-                                                                {{ __('Global Footprint') }}
+                                                                {{ __('Global Partners') }}
                                                             </a>
                                                         </li>
                                                         {{-- <li class="dropdown-submenu">
@@ -285,7 +285,7 @@
                                 height="68">
                         </a>
                         <p class="mt-2 mb-2">International wealth structure and family office services tailor-made for you.
-Our private clients trust OCTAGON to protect their assets and plan long-term wealth for future generations.</p>
+                                Our private clients trust OCTAGON to protect their assets and plan long-term wealth.</p>
                         <p class="mb-0"><a href="#" class="btn-flat btn-xs text-color-light"><strong
                                     class="text-2">{{ __('VIEW MORE') }}</strong><i
                                     class="fas fa-angle-right p-relative top-1 ps-2"></i></a></p>
