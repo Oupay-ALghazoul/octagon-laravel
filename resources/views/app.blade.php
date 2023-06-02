@@ -12,6 +12,7 @@
             $langName = 'Russian';
             break;
     }
+    $aboutUs = \App\Models\AboutUs::withTranslation(['ar', 'ru'])->first();
     $services = \App\Models\Service::withTranslation(['ar', 'ru'])
         ->with('subCategories')
         ->get();
@@ -115,7 +116,7 @@
                                             {{-- <li class="nav-item nav-item-borders py-2 d-none d-lg-inline-flex">
 													<a href="#">Blog</a>
 												</li> --}}
-                                            <li class="nav-item nav-item-borders py-2 pe-0 dropdown">
+                                            <li hidden class="nav-item nav-item-borders py-2 pe-0 dropdown">
                                                 <a class="nav-link" href="#" role="button" id="dropdownLanguage"
                                                     data-bs-toggle="dropdown" aria-haspopup="true"
                                                     aria-expanded="false">
@@ -160,8 +161,8 @@
                             <div class="header-row">
                                 <div class="header-logo">
                                     <a href="index.html">
-                                        <img alt="Octagon" width="160" height="48" data-sticky-width="82"
-                                            data-sticky-height="40" src="{{asset('img/logos/octagon-logo.svg')}}">
+                                        <img alt="Octagon" width="180" height="48" data-sticky-width="110"
+                                            data-sticky-height="44" src="{{asset('img/logos/octagon-logo.svg')}}">
                                     </a>
                                 </div>
                             </div>
@@ -179,7 +180,13 @@
                                                         {{ __('Home') }}
                                                     </a>
                                                 </li>
-                                                <li class="nav-item dropdown">
+                                                <li class="nav-item">
+                                                    <a class="dropdown-item {{ request()->is('founders') ? 'active' : '' }}"
+                                                        href="{{url('founders')}}">
+                                                        {{ __('Our Team') }}
+                                                    </a>
+                                                </li>
+                                                <li hidden class="nav-item dropdown">
                                                     {{-- <a class="{{ request()->is('about-us') ? 'active' : '' }}"
                                                         href="#">
                                                         {{ __('About us') }}
@@ -221,7 +228,7 @@
                                                         </li> --}}
                                                     </ul>
                                                 </li>
-                                                <li class="nav-item dropdown">
+                                                <li class="nav-item dropdown d-none">
                                                     <a class="dropdown-item dropdown-toggle {{ request()->is('services') ? 'active' : '' }}"
                                                         href="#">
                                                         {{ __('Services') }}
@@ -243,7 +250,7 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
-                                                <li class="nav-item">
+                                                <li class="nav-item d-none">
                                                     <a class="{{ request()->is('contact') ? 'active' : '' }}"
                                                         href="{{url('contact')}}">
                                                         {{ __('Contact Us') }}
@@ -284,8 +291,7 @@
                             <img alt="Octagon Website" src="{{asset('img/logos/octagon-logo.svg')}}" class="opacity-7 bottom-4"
                                 height="68">
                         </a>
-                        <p class="mt-2 mb-2">International wealth structure and family office services tailor-made for you.
-                                Our private clients trust OCTAGON to protect their assets and plan long-term wealth.</p>
+                        <p class="mt-2 mb-2">{!! $aboutUs->translate($locale, 'en')->footer_text !!}</p>
                         <p class="mb-0"><a href="#" class="btn-flat btn-xs text-color-light"><strong
                                     class="text-2">{{ __('VIEW MORE') }}</strong><i
                                     class="fas fa-angle-right p-relative top-1 ps-2"></i></a></p>

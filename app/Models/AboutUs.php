@@ -8,6 +8,6 @@ use TCG\Voyager\Traits\Translatable;
 class AboutUs extends Model
 {
     use Translatable;
-    protected $translatable = ['text'];
+    protected $translatable = ['text', 'footer_text'];
     
 }

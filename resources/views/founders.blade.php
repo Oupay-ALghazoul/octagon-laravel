@@ -14,11 +14,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-dark">{{ __('Founders') }}</h1>
+                    <h1 class="font-weight-bold text-dark">{{ __('Our Team') }}</h1>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb d-block text-center">
-                        <li><a href="#">{{ __('Founders') }}</a></li>
+                        <li><a href="#">{{ __('Our Team') }}</a></li>
                         <li class="active">{{ __('About us') }}</li>
                     </ul>
                 </div>
@@ -27,7 +27,7 @@
     </section>
 
     <section class="section section-default bg-color-light-scale-1 border-0 mb-5">
-        <div class="container">
+        <div hidden class="container">
             {{-- <h2 class="text-color-dark font-weight-bold text-center mb-0 pt-2">{{ __('Founders') }}</strong></h2> --}}
             <div class="row justify-content-center pt-4 mt-5 mb-5">
                 <div class="col-lg-10 text-center">
@@ -70,14 +70,19 @@
                             </p>
                         </div>
                         <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
-                            data-appear-animation-delay="700">{{ $founder->description }}</p>
+                            data-appear-animation-delay="700">
+                        <div style="font-size: 1.2rem">
+                            {!! $founder->description !!}
+                        </div>
+                        </p>
                         {{-- <p class="pb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800"></p> --}}
                         <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="900">
                         <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="1000">
                             <div class="col-lg-6">
-                                <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;" href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
+                                <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;"
+                                    href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
                                     Connect on
                                     <i style="font-size: 18px;" class="fab fa-linkedin-in p-1 mx-1"></i>
                                 </a>
@@ -116,14 +121,19 @@
                             </p>
                         </div>
                         <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
-                            data-appear-animation-delay="700">{{ $founder->description }}</p>
+                            data-appear-animation-delay="700">
+                        <div style="font-size: 1.2rem">
+                            {!! $founder->description !!}
+                        </div>
+                        </p>
                         {{-- <p class="pb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800"></p> --}}
                         <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="900">
                         <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="1000">
                             <div class="col-lg-6">
-                                <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;" href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
+                                <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;"
+                                    href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
                                     Connect on
                                     <i style="font-size: 18px;" class="fab fa-linkedin-in p-1 mx-1"></i>
                                 </a>
@@ -161,7 +171,7 @@
     </section>
 
 
-    <div class="container py-5 my-4">
+    <div hidden class="container py-5 my-4">
         <div class="row text-center py-3">
             <div class="col-md-10 mx-md-auto">
                 <h1 class="word-rotator slide font-weight-bold text-8 mb-3 appear-animation"
@@ -178,7 +188,7 @@
         </div>
     </div>
 
-    <section class="section section-primary">
+    <section hidden class="section section-primary">
         <div class="container">
             <div class="row counters counters-text-light">
                 <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
@@ -209,7 +219,7 @@
         </div>
     </section>
 
-    <div class="container">
+    <div hidden class="container">
         <div class="row py-5 my-5">
             <div class="col">
                 <style>
