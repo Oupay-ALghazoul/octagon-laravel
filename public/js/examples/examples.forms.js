@@ -172,6 +172,7 @@ Theme Version:	9.9.1
 	/*
 	Contact Form: reCaptcha v3
 	*/
+	debugger
 	$('.contact-form-recaptcha-v3').each(function(){
 		$(this).validate({
 			errorPlacement: function(error, element) {

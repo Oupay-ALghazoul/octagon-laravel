@@ -34,7 +34,8 @@
                 <h2 class="font-weight-bold text-7 mt-2 mb-0">Contact Us</h2>
                 <p class="mb-4">Feel free to ask for details, don't save any questions!</p>
 
-                <form class="contact-form-recaptcha-v3" action="php/contact-form-recaptcha-v3.php" method="POST">
+                <form class="contact-form" action="{{ url('contact') }}" method="POST">
+                    {{ csrf_field() }}
                     <div class="contact-form-success alert alert-success d-none mt-4">
                         <strong>Success!</strong> Your message has been sent to us.
                     </div>
@@ -46,12 +47,12 @@
 
                     <div class="row">
                         <div class="form-group col-lg-6">
-                            <label class="form-label mb-1 text-2">Full Name</label>
+                            <label class="form-label mb-1 text-2"> {{ __('Full Name') }} </label>
                             <input type="text" value="" data-msg-required="Please enter your name." maxlength="100"
                                 class="form-control text-3 h-auto py-2" name="name" required>
                         </div>
                         <div class="form-group col-lg-6">
-                            <label class="form-label mb-1 text-2">Email Address</label>
+                            <label class="form-label mb-1 text-2"> {{ __('Email Address') }} </label>
                             <input type="email" value="" data-msg-required="Please enter your email address."
                                 data-msg-email="Please enter a valid email address." maxlength="100"
                                 class="form-control text-3 h-auto py-2" name="email" required>
@@ -59,14 +60,14 @@
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <label class="form-label mb-1 text-2">Subject</label>
-                            <input type="text" value="" data-msg-required="Please enter the subject."
-                                maxlength="100" class="form-control text-3 h-auto py-2" name="subject" required>
+                            <label class="form-label mb-1 text-2"> {{ __('Phone Number') }} </label>
+                            <input type="tel" value="" data-msg-required="Please enter the Phone Number."
+                                maxlength="100" class="form-control text-3 h-auto py-2" name="phone" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <label class="form-label mb-1 text-2">Message</label>
+                            <label class="form-label mb-1 text-2"> {{ __('Message') }} </label>
                             <textarea maxlength="5000" data-msg-required="Please enter your message." rows="5"
                                 class="form-control text-3 h-auto py-2" name="message" required></textarea>
                         </div>
@@ -129,8 +130,10 @@
     </div>
 
     <div class="container-fluid">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.002902132003!2d55.170899!3d25.1017631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b7202f4ae41%3A0x12533f787f8d656!2sdu%20-%20Salam%20Tower!5e0!3m2!1sen!2sfr!4v1681722740275!5m2!1sen!2sfr" height="450" style="border:0; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.002902132003!2d55.170899!3d25.1017631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b7202f4ae41%3A0x12533f787f8d656!2sdu%20-%20Salam%20Tower!5e0!3m2!1sen!2sfr!4v1681722740275!5m2!1sen!2sfr"
+            height="450" style="border:0; width: 100%" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         {{-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3612.994459964501!2d55.1711540222168!3d25.102048873901367!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f133c2faae9a7%3A0xd41ce2c9f5ec768d!2sCarrefour!5e0!3m2!1sen!2seg!4v1681485005456!5m2!1sen!2seg" height="450" style="border:0; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> --}}
     </div>
-
 @endsection

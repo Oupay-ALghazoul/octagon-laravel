@@ -250,7 +250,7 @@
                                                         @endforeach
                                                     </ul>
                                                 </li>
-                                                <li class="nav-item d-none">
+                                                <li class="nav-item">
                                                     <a class="{{ request()->is('contact') ? 'active' : '' }}"
                                                         href="{{url('contact')}}">
                                                         {{ __('Contact Us') }}
@@ -286,7 +286,7 @@
                     <span>{{ __('Get in Touch') }}</span>
                 </div>
                 <div class="row py-5 my-4">
-                    <div class="col-md-8 mb-4 mb-lg-0">
+                    {{-- <div class="col-md-8 mb-4 mb-lg-0">
                         <a href="index.html" class="logo pe-0 pe-lg-3">
                             <img alt="Octagon Website" src="{{asset('img/logos/octagon-logo.svg')}}" class="opacity-7 bottom-4"
                                 height="68">
@@ -294,23 +294,33 @@
                         <p class="mt-2 mb-2">{!! $aboutUs->translate($locale, 'en')->footer_text !!}</p>
                         <p class="mb-0"><a href="#" class="btn-flat btn-xs text-color-light"><strong
                                     class="text-2">{{ __('VIEW MORE') }}</strong><i
-                                    class="fas fa-angle-right p-relative top-1 ps-2"></i></a></p>
-                    </div>
-                    <div class="col-md-4">
+                                    class="fas fa-angle-right p-relative top-1 ps-2">
+                                </i>
+                            </a>
+                        </p>
+                    </div> --}}
+                    <div class="col-md-12">
                         <h5 class="text-3 mb-3">{{ __('Contact Us') }}</h5>
                         <div class="row">
                             <div class="col-md-12">
-                                <ul class="list list-icons list-icons-lg">
-                                    <li class="mb-1"><i class="far fa-dot-circle text-color-primary"></i>
+                                <style>
+                                        ul.list-icons li {
+                                            padding-inline-end: 24px 
+                                        }
+                                </style>
+                                <ul class="list list-icons list-icons-lg d-flex flex-wrap">
+                                    <li class="mb-1 col-12 col-md-auto"><i class="far fa-dot-circle text-color-primary"></i>
                                         <p class="m-0"> {{ setting('site.address') }}</p>
                                     </li>
-                                    <li class="mb-1"><i class="fab fa-whatsapp text-color-primary"></i>
+                                    <li class="mb-1 col-12 col-md-auto"><i class="fab fa-whatsapp text-color-primary"></i>
                                         <p class="m-0"><a
-                                                href="tel:8001234567">{{ setting('site.contact_number') }}</a></p>
+                                                href="tel:{{ setting('site.contact_number') }}">{{ setting('site.contact_number') }}
+                                            </a>
+                                        </p>
                                     </li>
-                                    <li class="mb-1"><i class="far fa-envelope text-color-primary"></i>
+                                    <li class="mb-1 col-12 col-md-auto"><i class="far fa-envelope text-color-primary"></i>
                                         <p class="m-0"><a
-                                                href="mailto:mail@example.com">{{ setting('site.contact_email') }}
+                                                href="mailto:{{ setting('site.contact_email') }}">{{ setting('site.contact_email') }}
                                             </a>
                                         </p>
                                     </li>
@@ -353,6 +363,8 @@
 
     <!-- Theme Initialization Files -->
     <script src="{{asset('js/theme.init.js')}}"></script>
+    {{-- Contact form js --}}
+    <script src="{{asset('js/views/view.contact.js')}}"></script>
 
 </body>
 

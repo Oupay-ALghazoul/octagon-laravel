@@ -87,8 +87,8 @@
                         libero quod voluptatem, similique iure, eaque nesciunt odio voluptatum obcaecati! Eius fugit ut
                         consequatur dicta quae. --}}
                     </p>
-                    <p style="font-weight: 100">
-                        <strong style="font-weight: 600">OCTAGON</strong> is a privately owned consultancy firm with
+                    <p style="font-size: 1.2rem; font-weight: 400">
+                        <strong style="font-weight: 400">OCTAGON</strong> is a privately owned consultancy firm with
                         global
                         expertise. Established in
                         Dubai, UAE in
@@ -101,7 +101,7 @@
                         relationship with banks, transferring assets and protecting value of their wealth and providing
                         lifestyle solutions.
                     </p>
-                    <ol class="mt-4" style="font-weight: 100 !important; font-size: 1.2rem">
+                    <ol class="mt-4" style="font-size: 1.2rem; color:#333333;">
                         <li class="mt-3">
                             OCTAGON operates from Dubai and partners with international service providers in UAE, Oman,
                             Mauritius, Russian Federation, Vietnam, Indonesia, Hong Kong, and Singapore. Throughout its

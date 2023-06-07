@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ContactController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -54,6 +55,7 @@ Route::get('/sub-services/{id}', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::post('/contact', [ContactController::class, 'store']);
 
 Route::get('/lang/{lang?}', function ($lang = 'en') {
     Session::put('locale', $lang);
