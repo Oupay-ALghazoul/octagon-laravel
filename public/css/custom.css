@@ -4,5 +4,5 @@
 }
 
 .ACaslonPro-Regular-font {
-    font-family: ACaslonPro-Regular !important;
+    font-family: ACaslonPro-Regular, -webkit-body !important;
 }

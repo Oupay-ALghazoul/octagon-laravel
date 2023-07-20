@@ -32,7 +32,7 @@
 
     <meta name="keywords" content="Octagon WebSite, Consultancy" />
     <meta name="description" content="Octagon - Website for Consultancy">
-    <meta name="author" content="Oupay Alghazoul">
+    <meta name="author" content="Octagon company">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon" />
@@ -101,7 +101,7 @@
                                                         style="top: 0;"></i> {{ setting('site.contact_number') }}</a>
                                             </li>
                                             <li class="nav-item nav-item-borders py-2 d-none d-md-inline-flex">
-                                                <a href="mailto:mail@domain.com"><i
+                                                <a href="mailto:{{ setting('site.contact_email') }}"><i
                                                         class="far fa-envelope text-4 text-color-primary"
                                                         style="top: 1px;"></i> {{ setting('site.contact_email') }}</a>
                                             </li>
@@ -160,7 +160,7 @@
                         <div class="header-column">
                             <div class="header-row">
                                 <div class="header-logo">
-                                    <a href="index.html">
+                                    <a href="{{url('index')}}">
                                         <img alt="Octagon" width="180" height="48" data-sticky-width="110"
                                             data-sticky-height="44" src="{{asset('img/logos/octagon-logo.svg')}}">
                                     </a>
@@ -281,13 +281,13 @@
         </div>
 
         <footer id="footer">
-            <div class="container">
+            <div hidden class="container">
                 <div class="footer-ribbon">
                     <span>{{ __('Get in Touch') }}</span>
                 </div>
                 <div class="row py-5 my-4">
                     {{-- <div class="col-md-8 mb-4 mb-lg-0">
-                        <a href="index.html" class="logo pe-0 pe-lg-3">
+                        <a href="{{url('index')}}" class="logo pe-0 pe-lg-3">
                             <img alt="Octagon Website" src="{{asset('img/logos/octagon-logo.svg')}}" class="opacity-7 bottom-4"
                                 height="68">
                         </a>
@@ -344,7 +344,7 @@
                 <div class="container py-2">
                     <div class="row py-4">
                         <div class="col d-flex align-items-center justify-content-center">
-                            <p>© {{ __('Copyright 2023. All Rights Reserved') }}</p>
+                            <p>© {{ __('Copyright 2023. All Rights Reserved and made with passion by Thinkonline') }} </p>
                         </div>
                     </div>
                 </div>

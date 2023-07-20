@@ -29,7 +29,7 @@
     <div class="container py-4">
 
         <div class="row mb-2">
-            <div class="col">
+            <div class="col-12 col-lg-6">
 
                 <h2 class="font-weight-bold text-7 mt-2 mb-0">Contact Us</h2>
                 <p class="mb-4">Feel free to ask for details, don't save any questions!</p>
@@ -80,6 +80,16 @@
                     </div>
                 </form>
 
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="800" style="animation-delay: 800ms;">
+                    <h2 class="font-weight-bold text-7 mt-2 mb-0">Contact Info</h2>
+                    <ul class="list list-icons list-icons-style-2 mt-2 p-3">
+                        <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">Address:</strong> {{ setting('site.address') }} </li>
+                        <li><i class="fas fa-phone top-6"></i> <strong class="text-dark">Phone:</strong> {{ setting('site.contact_number') }}</li>
+                        <li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">Email:</strong> <a href="mailto:{{ setting('site.contact_email') }}">{{ setting('site.contact_email') }}</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="row mb-5 d-none">
