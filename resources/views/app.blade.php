@@ -46,6 +46,11 @@
         href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap"
         rel="stylesheet" type="text/css">
 
+    <link id="googleFonts"
+        href="https://fonts.googleapis.com/css?family=Rubik"
+        rel="stylesheet" type="text/css">
+        
+
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}">
@@ -73,13 +78,19 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 
+    <style>
+        .Rubik-font {
+            font-family: "Rubik", sans-serif !important;
+        }
+    </style>
+
     <!-- Head Libs -->
     <script src="{{asset('vendor/modernizr/modernizr.min.js')}}"></script>
 
 </head>
 
 <body data-plugin-page-transition>
-    <div class="body ACaslonPro-Regular-font">
+    <div class="body {{$locale == 'ar' ? 'Rubik-font' : 'ACaslonPro-Regular-font'}}">
         <header id="header" class="header-effect-shrink"
             data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyChangeLogo': true, 'stickyStartAt': 30, 'stickyHeaderContainerHeight': 70}">
             <div class="header-body border-color-primary border-bottom-0">
@@ -96,14 +107,20 @@
                                                         style="top: 1px;"></i> {{ setting('site.address') }}</span>
                                             </li>
                                             <li class="nav-item nav-item-borders py-2">
-                                                <a href="tel:123-456-7890"><i
+                                                <a href="tel:{{ setting('site.contact_number') }}"><i
                                                         class="fab fa-whatsapp text-4 text-color-primary"
-                                                        style="top: 0;"></i> {{ setting('site.contact_number') }}</a>
+                                                        style="top: 0;"></i> 
+                                                            <span dir="ltr">
+                                                                {{ setting('site.contact_number') }}
+                                                            </span>
+                                                    </a>
                                             </li>
                                             <li class="nav-item nav-item-borders py-2 d-none d-md-inline-flex">
                                                 <a href="mailto:{{ setting('site.contact_email') }}"><i
                                                         class="far fa-envelope text-4 text-color-primary"
-                                                        style="top: 1px;"></i> {{ setting('site.contact_email') }}</a>
+                                                        style="top: 1px;"></i> 
+                                                        {{ setting('site.contact_email') }}
+                                                    </a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -116,7 +133,7 @@
                                             {{-- <li class="nav-item nav-item-borders py-2 d-none d-lg-inline-flex">
 													<a href="#">Blog</a>
 												</li> --}}
-                                            <li hidden class="nav-item nav-item-borders py-2 pe-0 dropdown">
+                                            <li class="nav-item nav-item-borders py-2 pe-0 dropdown">
                                                 <a class="nav-link" href="#" role="button" id="dropdownLanguage"
                                                     data-bs-toggle="dropdown" aria-haspopup="true"
                                                     aria-expanded="false">
@@ -140,7 +157,7 @@
                                                             src="{{asset('img/blank.gif')}}" class="flag flag-ae"
                                                             alt="English" />
                                                         Arabic </a>
-                                                    <a class="dropdown-item"
+                                                    <a hidden class="dropdown-item"
                                                         href="{{ route('change-lang', [
                                                             'lang' => 'ru',
                                                         ]) }}"><img

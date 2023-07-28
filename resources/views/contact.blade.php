@@ -2,8 +2,10 @@
     // $setting_home = \App\Models\SiteSetting::first()->translate(app()->getLocale(), 'fallbackLocale');
     // $services = \App\Models\Service::get()->translate(app()->getLocale(), 'fallbackLocale');;
     // $news = \App\Models\News::orderBy('id','desc')->skip(0)->take(3)->get()->translate(app()->getLocale(), 'fallbackLocale');;
+    $locale = Session::get('locale') ?? 'en';
     $services = \App\Models\Service::get();
     $slides = \App\Models\HomeSlide::get();
+    app()->setLocale($locale);
 @endphp
 
 @extends('app')
@@ -14,12 +16,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 align-self-center p-static order-2 text-center">
-                    <h1 class="font-weight-bold text-dark">Contact Us</h1>
+                    <h1 class="font-weight-bold text-dark">{{__('Contact Us')}}</h1>
                 </div>
                 <div class="col-md-12 align-self-center order-1">
                     <ul class="breadcrumb d-block text-center">
-                        <li><a href="#">Home</a></li>
-                        <li class="active">Pages</li>
+                        <li><a href="#">{{__('Home')}}</a></li>
+                        <li class="active">{{__('Contact Us')}}</li>
                     </ul>
                 </div>
             </div>
@@ -31,8 +33,8 @@
         <div class="row mb-2">
             <div class="col-12 col-lg-6">
 
-                <h2 class="font-weight-bold text-7 mt-2 mb-0">Contact Us</h2>
-                <p class="mb-4">Feel free to ask for details, don't save any questions!</p>
+                <h2 class="font-weight-bold text-7 mt-2 mb-0">{{__('Contact Us')}}</h2>
+                <p class="mb-4">{{ __("Feel free to ask for details, don't save any questions!") }}</p>
 
                 <form class="contact-form" action="{{ url('contact') }}" method="POST">
                     {{ csrf_field() }}
@@ -74,7 +76,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <input type="submit" value="Send Message" class="btn btn-primary btn-modern"
+                            <input type="submit" value="{{ __('Send Message') }}" class="btn btn-primary btn-modern"
                                 data-loading-text="Loading...">
                         </div>
                     </div>
@@ -83,11 +85,11 @@
             </div>
             <div class="col-12 col-lg-6">
                 <div class="appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="800" style="animation-delay: 800ms;">
-                    <h2 class="font-weight-bold text-7 mt-2 mb-0">Contact Info</h2>
+                    <h2 class="font-weight-bold text-7 mt-2 mb-0"> {{__('Contact Info')}} </h2>
                     <ul class="list list-icons list-icons-style-2 mt-2 p-3">
-                        <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">Address:</strong> {{ setting('site.address') }} </li>
-                        <li><i class="fas fa-phone top-6"></i> <strong class="text-dark">Phone:</strong> {{ setting('site.contact_number') }}</li>
-                        <li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">Email:</strong> <a href="mailto:{{ setting('site.contact_email') }}">{{ setting('site.contact_email') }}</a></li>
+                        <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">{{__('Contact Us')}}:</strong> {{ setting('site.address') }} </li>
+                        <li><i class="fas fa-phone top-6"></i> <strong class="text-dark">{{__('Phone')}}:</strong> <span dir="ltr">{{ setting('site.contact_number') }} </span></li>
+                        <li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">{{__('Email')}}:</strong> <a href="mailto:{{ setting('site.contact_email') }}">{{ setting('site.contact_email') }}</a></li>
                     </ul>
                 </div>
             </div>

@@ -66,51 +66,55 @@
                         libero quod voluptatem, similique iure, eaque nesciunt odio voluptatum obcaecati! Eius fugit ut
                         consequatur dicta quae. --}}
                     </p>
+                    @if ($locale == 'en')                        
                     <p style="font-size: 1.2rem; font-weight: 400">
-                        <strong style="font-weight: 400">OCTAGON</strong> is a privately owned consultancy firm with
-                        global
-                        expertise. Established in
-                        Dubai, UAE in
-                        2022 by Andrei Marcenco, Ekaterina Chernova and Vera Doljenkova who collectively have over 55
-                        years
-                        of international expertise in asset management, investment banking, strategic planning and
-                        consulting. OCTAGON strives to serve clients to best international standards and meet their
-                        needs
-                        when it comes to selecting right jurisdiction and structure, establishing and maintaining
-                        relationship with banks, transferring assets and protecting value of their wealth and providing
-                        lifestyle solutions.
+                        <strong style="font-weight: 400">OCTAGON</strong> is a privately owned consultancy firm with global expertise. Established in Dubai, UAE in 2022 by partners who collectively have over 55 years of international expertise in asset management, investment banking, strategic planning and consulting. OCTAGON strives to serve clients to best international standards and meet their needs when it comes to selecting right jurisdiction and structure, establishing and maintaining relationship with banks, transferring assets and protecting value of their wealth and providing lifestyle solutions.
                     </p>
                     <ol class="mt-4" style="font-size: 1.2rem; color:#333333;">
                         <li class="mt-3">
-                            OCTAGON operates from Dubai and partners with international service providers in UAE, Oman,
-                            Mauritius, Russian Federation, Vietnam, Indonesia, Hong Kong, and Singapore. Throughout its
-                            extensive network OCTAGON can offer clients the best tailored made solutions across the
-                            globe
+                            OCTAGON operates from Dubai and has extensive network of partners with international service providers in UAE, Oman, Mauritius, Luxemburg, Cyprus, Vietnam, Indonesia, Hong Kong, and Singapore. Throughout its extensive network OCTAGON can offer B2B and B2C clients the best tailored made solutions across the globe
                         </li>
-                        <li class="mt-3"> OCTAGON facilitates company formation and opening bank accounts and helps to
-                            maintain
-                            ongoing
-                            relationship with banks , as well as provide advice regarding investment products linked to
-                            residency.</li>
-                        <li class="mt-3"> OCTAGON provides solutions in transferring portfolios of securities and
-                            opening
-                            brokerage
-                            accounts with access to global markets. Throughout its diversified expertise and
-                            international
-                            partners network OCTAGON can offer investment products across all asset classes and
-                            construct
-                            portfolios.</li>
-                        <li class="mt-3"> Alongside business related services OCTAGON provides lifestyle solutions
-                            tailored for HNWI
-                            clients.</li>
-                        <li class="mt-3">
-                            OCTAGON takes pride in providing clients with exceptional services and commits to
-                            excellence.
+                        <li class="mt-3"> OCTAGON in one stop shop that provides solutions in corporate finance, tax planning, structuring, recruitment and business development </li>
+                        <li class="mt-3"> OCTAGON facilitates company formation and opening bank accounts and helps to maintain ongoing relationship with banks, as well as provides advice regarding investment products linked to residency.</li>
+                        <li class="mt-3"> OCTAGON provides solutions in transferring portfolios of securities and opening brokerage accounts with access to global markets. Throughout its diversified expertise and international partners network OCTAGON can offer investment products across all asset classes and construct portfolios.</li>
+                        <li class="mt-3">Alongside business related services OCTAGON provides lifestyle solutions tailored for HNWI clients.
                         </li>
-
-
-
+                        <li class="mt-3">OCTAGON takes pride in providing clients with exceptional services and commits to excellence.
+                        </li>
+                        <li class="mt-3">OCTAGON is licensed corporate services provider and licensed to provide accounting, bookkeeping, tax, sourcing, procurement, project development, marketing research and industrial consultancy.
+                        </li>
                     </ol>
+                    @elseif ($locale == 'ar')
+                    <p style="font-size: 1.2rem; font-weight: 400">
+                        <strong style="font-weight: 400">اوكتاجون</strong>
+                         هي شركة استشارية مملوكة للقطاع الخاص تتمتع بخبرة عالمية. تأسست في دبي ، الإمارات العربية المتحدة في عام 2022 من قبل شركاء لديهم أكثر من 55 عامًا من الخبرة الدولية في إدارة الأصول والخدمات المصرفية الاستثمارية والتخطيط الاستراتيجي والاستشارات.
+                        تسعى اوكتاجون جاهدة لخدمة عملائها وفقًا لأفضل المعايير الدولية وتلبية احتياجاتهم عندما يتعلق الأمر باختيار الاختصاص والهيكل المناسبين، إنشاء والحفاظ على العلاقة مع البنوك، نقل الأصول وحماية قيمة ثرواتهم وتوفير حلول أسلوب الحياة.                        
+                    </p>
+                    <ol class="mt-4" style="font-size: 1.2rem; color:#333333;">
+                        <li class="mt-3">
+                            اوكتاجون تعمل من دبي ولديها شبكة واسعة من الشركاء ومزودي الخدمات الدوليين في الإمارات العربية المتحدة، سلطنة عمان، جمهورية موريشيوس، لوكسمبورغ ، قبرص ، جمهورية فيتنام الاشتراكية، جمهورية اندونيسيا، هونغ كونغ ، وجمهورية سنغافورة.
+                            من خلال شبكتها الواسعة ، يمكن لـ اوكتاجون أن تقدّم أفضل الحلول المصممة خصيصًا في جميع أنحاء العالم للشركات والافراد. 
+                        </li>
+                        <li class="mt-3"> 
+                            اوكتاجون في متجر واحد توفر حلولاً في تمويل الشركات، التخطيط الضريبي، الهيكلة والتوظيف وتطوير الأعمال.                        </li>
+                        <li class="mt-3">
+                            اوكتاجون تسهّل تكوين الشركة، فتح الحسابات المصرفية وتساعد في الحفاظ على العلاقة المستمرة مع البنوك، فضلاً عن تقديم المشورة بشأن المنتجات الاستثمارية المرتبطة بالإقامة.
+                        </li>
+                        <li class="mt-3"> 
+                            اوكتاجون تقدّم حلولاً في تحويل محافظ الأوراق المالية، وفتح حسابات الوساطة مع الوصول إلى الأسواق العالمية. من خلال خبرتها المتنوعة وشبكة الشركاء الدوليين ، يمكن لـ اوكتاجون تقديم منتجات استثمارية عبر جميع فئات الأصول وإنشاء محافظ.
+                        </li>
+                        <li class="mt-3">
+                            إلى جانب الخدمات المتعلقة بالأعمال، توفر اوكتاجون حلول نمط الحياة المصممة للعملاء الأثرياء.
+                        </li>
+                        <li class="mt-3">
+                            اوكتاجون تفتخر بتزويد العملاء بخدمات استثنائية وتلتزم بالتميّز.
+                        </li>
+                        <li class="mt-3">
+                            اوكتاجون هي شركة مرخصة لتقديم خدمات للشركات وهي مرخصة لتقديم خدمات المحاسبة، ضبط الدفاتر، الضرائب والتوريد، المشتريات، تطوير المشاريع وبحوث التسويق والاستشارات الصناعية.
+                        </li>
+                    </ol>
+                    @endif
+
                 </div>
             </div>
         </div>

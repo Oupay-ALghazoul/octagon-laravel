@@ -2,7 +2,7 @@
     "Home" : "الرئيسية",
     "Contact" : "تواصل معنا",
     "Services": "الخدمات",
-    "Contact Us": "تواصل معنا",
+    "Contact Us": "اتصل بنا",
     "Pages": "صفحات",
     "Clients": "عميل",
     "Years of Experience": "سنوات من الخبرة",
@@ -15,5 +15,18 @@
     "VIEW MORE": "شاهد المزيد",
     "Get in Touch": "ابقى على تواصل",
     "The fastest way to grow your business with the leader in": "أسرع طريقة لتنمية أعمالك مع الرائد في مجال",
-    "Consultancy": "الاستشارات"
+    "Consultancy": "الاستشارات",
+    "Our Team": "فريقنا",
+    "About us": "نبذة عنا",
+    "Contact Info": "معلومات الاتصال ",
+    "Address": "العنوان",
+    "Email": "البريد الإلكتروني",
+    "Phone": "هاتف",
+    "Feel free to ask for details, don't save any questions!": "لا تتردد في السؤال عن التفاصيل ، ولا تقم بحفظ أي أسئلة!",
+    "Full Name": "الاسم الكامل",
+    "Phone Number": "رقم التليفون",
+    "Email Address": "عنوان البريد الإلكتروني",
+    "Message": "رسالة",
+    "Send Message": "ارسال"
+
 }

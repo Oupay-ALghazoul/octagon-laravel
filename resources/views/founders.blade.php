@@ -62,17 +62,17 @@
                     <div class="col-md-7 order-2">
                         <div class="overflow-hidden">
                             <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="300">{{ $founder->name }}</h2>
+                                data-appear-animation="maskUp" data-appear-animation-delay="300"> {{ $founder->translate($locale, 'en')->name}} </h2>
                         </div>
                         <div class="overflow-hidden mb-3">
                             <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="500">{{ $founder->job_title }}
+                                data-appear-animation="maskUp" data-appear-animation-delay="500">  {{ $founder->translate($locale, 'en')->job_title}}
                             </p>
                         </div>
                         <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="700">
                         <div style="font-size: 1.2rem">
-                            {!! $founder->description !!}
+                            {!! $founder->translate($locale, 'en')->description !!}
                         </div>
                         </p>
                         {{-- <p class="pb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800"></p> --}}
@@ -80,7 +80,7 @@
                             data-appear-animation-delay="900">
                         <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="1000">
-                            <div class="col-lg-6">
+                            <div hidden class="col-lg-6">
                                 <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;"
                                     href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
                                     Connect on
@@ -113,17 +113,17 @@
                     <div class="col-md-7 order-2">
                         <div class="overflow-hidden">
                             <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="300">{{ $founder->name }}</h2>
+                                data-appear-animation="maskUp" data-appear-animation-delay="300">{{ $founder->translate($locale, 'en')->name}}</h2>
                         </div>
                         <div class="overflow-hidden mb-3">
                             <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="500">{{ $founder->job_title }}
+                                data-appear-animation="maskUp" data-appear-animation-delay="500">{{ $founder->translate($locale, 'en')->job_title}}
                             </p>
                         </div>
                         <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="700">
                         <div style="font-size: 1.2rem">
-                            {!! $founder->description !!}
+                            {!! $founder->translate($locale, 'en')->description !!}
                         </div>
                         </p>
                         {{-- <p class="pb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800"></p> --}}
@@ -131,7 +131,7 @@
                             data-appear-animation-delay="900">
                         <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="1000">
-                            <div class="col-lg-6">
+                            <div hidden class="col-lg-6">
                                 <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;"
                                     href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
                                     Connect on
@@ -156,14 +156,24 @@
             <div class="row justify-content-center pt-4 mt-5 mb-5">
                 <div class="col-lg-10 text-center">
                     <div class="overflow-hidden mb-3">
-                        <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
-                            data-appear-animation="maskUp" data-appear-animation-delay="200"
-                            style="animation-delay: 200ms;">
-                            Our passion for finance, combined with extensive experience and wide network, allows to deliver
-                            exceptional results to the clients. We are committed to providing personalized and tailored
-                            solutions to each client, taking into account their unique circumstances and financial
-                            objectives.
-                        </p>
+                        @if ($locale == 'en')                        
+                            <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                                data-appear-animation="maskUp" data-appear-animation-delay="200"
+                                style="animation-delay: 200ms;">
+                                Our passion for finance, combined with extensive experience and wide network, allows to deliver
+                                exceptional results to the clients. We are committed to providing personalized and tailored
+                                solutions to each client, taking into account their unique circumstances and financial
+                                objectives.
+                            </p>
+                        @elseif ($locale == 'ar')
+                            <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
+                                data-appear-animation="maskUp" data-appear-animation-delay="200"
+                                style="animation-delay: 200ms;">
+                                يسمح شغفنا بالتفوّق بتقديم نتائج استثنائية للعملاء، الخبرة العالية والشبكة الواسعة.
+                                <br>
+                                نحن ملتزمون بتقديم حلول مخصصة لكل عميل، مع مراعاة ظروفهم الفريدة وأهدافهم المالية.
+                            </p>
+                        @endif
                     </div>
                 </div>
             </div>
