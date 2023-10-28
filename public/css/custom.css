@@ -6,3 +6,8 @@
 .ACaslonPro-Regular-font {
     font-family: ACaslonPro-Regular, -webkit-body !important;
 }
+
+.what-we-deliver-item:hover * {
+    color: #fff;
+
+}

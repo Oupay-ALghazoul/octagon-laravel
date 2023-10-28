@@ -48,6 +48,18 @@ Route::get('/services', function () {
     return view('services');
 });
 
+Route::get('/global-capabilities', function () {
+    return view('global-capabilities');
+});
+
+Route::get('/countries-representative', function () {
+    return view('countries-representative');
+});
+
+Route::get('/faq', function () {
+    return view('faq');
+});
+
 Route::get('/sub-services/{id}', function () {
     return view('sub-service');
 });
@@ -68,4 +80,46 @@ Route::get('/lang/{lang?}', function ($lang = 'en') {
 
 Route::group(['prefix' => 'admin-94'], function () {
     Voyager::routes();
+});
+
+
+Route::get('storage/files/{dir1}/{dir2}/{filename}', function ($dir1, $dir2, $filename) {
+
+    $path = storage_path('app/public/' . $dir1 . '/' . $dir2 . '/' . $filename);
+    if (!File::exists($path)) {
+        abort(404);
+    }
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('storage/{dir1}/{dir2}/{filename}', function ($dir1, $dir2, $filename) {
+
+    $path = storage_path('app/public/' . $dir1 . '/' . $dir2 . '/' . $filename);
+    if (!File::exists($path)) {
+        abort(404);
+    }
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('/view-clear', function() {
+    Artisan::call('view:clear');
+    return 'View cache has been cleared';
+});
+
+// Clear application cache:
+Route::get('/clear-cache', function() {
+    Artisan::call('cache:clear');
+    return 'Application cache has been cleared';
 });

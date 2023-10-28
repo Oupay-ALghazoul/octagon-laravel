@@ -1,7 +1,7 @@
 @php
     $locale = Session::get('locale') ?? 'en';
     $services = \App\Models\Service::withTranslation(['ar', 'ru'])->get();
-    $founders = \App\Models\Founder::withTranslations(['ar', 'ru'])->get();
+    $founders = \App\Models\Founder::orderByRaw("COALESCE(`order`, 'zz') ASC")->withTranslations(['ar', 'ru'])->get();
     $aboutUs = \App\Models\AboutUs::withTranslations(['ar', 'ru'])->first();
     $clients = \App\Models\Client::withTranslations(['ar', 'ru'])->get();
     $values = \App\Models\PropositionValue::withTranslations(['ar', 'ru'])->get();
@@ -79,8 +79,8 @@
                         <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="900">
                         <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
-                            data-appear-animation-delay="1000">
-                            <div hidden class="col-lg-6">
+                            data-appear-animation-delay="200">
+                            <div class="col-lg-6">
                                 <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;"
                                     href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
                                     Connect on
@@ -130,8 +130,8 @@
                         <hr class="solid my-4 appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="900">
                         <div class="row align-items-center appear-animation" data-appear-animation="fadeInUpShorter"
-                            data-appear-animation-delay="1000">
-                            <div hidden class="col-lg-6">
+                            data-appear-animation-delay="200">
+                            <div class="col-lg-6">
                                 <a target="_blank" style="background: #0073b2 !important; color: #fff; padding: 5px 16px;"
                                     href="{{ $founder->linkedin }}" class="btn btn-modern mt-1">
                                     Connect on

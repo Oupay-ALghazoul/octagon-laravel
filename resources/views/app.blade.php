@@ -30,8 +30,8 @@
 
     <title>Octagon for Consultancy</title>
 
-    <meta name="keywords" content="Octagon WebSite, Consultancy" />
-    <meta name="description" content="Octagon - Website for Consultancy">
+    <meta name="keywords" content="Octagon, Consultancy" />
+    <meta name="description" content="Octagon is a privately owned consultancy firm with global expertise. Established in Dubai, UAE in 2022 by partners who collectively have over 55 years of international expertise in asset management, investment banking, strategic planning and consulting. OCTAGON strives to serve clients to best international standards and meet their needs when it comes to selecting right jurisdiction and structure, establishing and maintaining relationship with banks, transferring assets and protecting value of their wealth and providing lifestyle solutions">
     <meta name="author" content="Octagon company">
 
     <!-- Favicon -->
@@ -245,7 +245,7 @@
                                                         </li> --}}
                                                     </ul>
                                                 </li>
-                                                <li class="nav-item dropdown d-none">
+                                                <li class="nav-item dropdown">
                                                     <a class="dropdown-item dropdown-toggle {{ request()->is('services') ? 'active' : '' }}"
                                                         href="#">
                                                         {{ __('Services') }}
@@ -266,6 +266,24 @@
                                                             </li>
                                                         @endforeach
                                                     </ul>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="{{ request()->is('global-capabilities') ? 'active' : '' }}"
+                                                        href="{{url('global-capabilities')}}">
+                                                        {{ __('Global Capabilities') }}
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="{{ request()->is('countries-representative') ? 'active' : '' }}"
+                                                        href="{{url('countries-representative')}}">
+                                                        {{ __('Representatives') }}
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="{{ request()->is('faq') ? 'active' : '' }}"
+                                                        href="{{url('faq')}}">
+                                                        {{ __('FAQ') }}
+                                                    </a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="{{ request()->is('contact') ? 'active' : '' }}"

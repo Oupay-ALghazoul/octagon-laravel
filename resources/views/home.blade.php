@@ -5,6 +5,7 @@
     $locale = Session::get('locale') ?? 'en';
     $services = \App\Models\Service::withTranslation(['ar', 'ru'])->get();
     $slides = \App\Models\HomeSlide::withTranslations(['ar', 'ru'])->get();
+    $whatWeDeliverItems = \App\Models\WhatWeDeliver::withTranslations(['ar', 'ru'])->get();
     app()->setLocale($locale);
     
 @endphp
@@ -119,6 +120,32 @@
             </div>
         </div>
     </div>
+
+    <section class="section what-we-deliver">
+
+        <div class="container">
+
+            <h2 class="font-weight-normal text-7 text-center mt-5"> {{ __("What We Deliver") }} </h2>
+
+            <div class="row align-items-stretch">
+
+                @foreach ($whatWeDeliverItems as $whatWeDeliverItem )
+                    
+                <div class="col-12 col-md-6 mb-4">
+                    <div style="border-bottom: 3px solid var(--primary)" class="what-we-deliver-item bg-color-hover-primary d-flex align-items-center bg-white p-4 h-100">
+                        <img class="mr-3" src="{{ Voyager::image($whatWeDeliverItem->logo) }}" alt="Generic placeholder image">
+                        <div class="p-3">
+                        <h4 class="mb-0">{{ $whatWeDeliverItem->translate($locale, "en")->title }}</h4>
+                        <p class="">{{ $whatWeDeliverItem->translate($locale, "en")->sub_title }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                @endforeach
+            </div>
+        </div>
+
+    </section>
 
     <div hidden class="home-intro light border border-bottom-0 mb-0">
         <div class="container">
