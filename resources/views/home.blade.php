@@ -6,6 +6,8 @@
     $services = \App\Models\Service::withTranslation(['ar', 'ru'])->get();
     $slides = \App\Models\HomeSlide::withTranslations(['ar', 'ru'])->get();
     $whatWeDeliverItems = \App\Models\WhatWeDeliver::withTranslations(['ar', 'ru'])->get();
+    $whoWeAreCards = \App\Models\WhoWeAreCard::withTranslation(['ar', 'ru'])->get();
+
     app()->setLocale($locale);
     
 @endphp
@@ -58,7 +60,36 @@
     </div>
 </div>
 
-    <div class="home-intro light border border-bottom-0 mb-0">
+<div class="container pb-1">
+
+    <h2 class="font-weight-normal text-7 text-center mt-5"> {{ __("ًWho We Are") }} </h2>
+
+    <div class="featured-boxes featured-boxes-style-2">
+
+        <div class="row mb-5 pb-3">
+
+            @foreach ($whoWeAreCards as $card)
+                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible"
+                    data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200"
+                    style="animation-delay: 200ms;">
+                    <div
+                        class="card bg-color-light box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
+                        <div class="card-body">
+                            <h3 style="background-color: {{ $card->title_color }}"
+                                class="card-title mb-1 text-white text-4 font-weight-bold px-2 py-1">
+                                {{ $card->translate($locale, 'en')->title }} </h3>
+                            <p class="card-text"> {!! $card->translate($locale, 'en')->description !!} </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+
+</div>
+
+    <div hidden class="home-intro light border border-bottom-0 mb-0">
         <div class="container">
             <div class="row align-items-center">
                 <div style="text-align: justify" class="col-lg-12">
