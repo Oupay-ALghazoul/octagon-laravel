@@ -71,7 +71,7 @@
                         </div>
                         <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="700">
-                        <div style="font-size: 1.2rem">
+                        <div style="font-size: 1.2rem; text-align: justify">
                             {!! $founder->translate($locale, 'en')->description !!}
                         </div>
                         </p>
@@ -122,7 +122,7 @@
                         </div>
                         <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
                             data-appear-animation-delay="700">
-                        <div style="font-size: 1.2rem">
+                        <div style="font-size: 1.2rem; text-align: justify">
                             {!! $founder->translate($locale, 'en')->description !!}
                         </div>
                         </p>

@@ -3509,6 +3509,7 @@ html.sticky-header-enabled.sticky-header-active #header .header-logo-sticky-chan
 		margin: 0;
 		padding: 0;
 		position: relative;
+		line-height: 30px;
 	}
 
 	#header .header-nav-main nav > ul li a {

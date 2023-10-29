@@ -198,7 +198,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a class="dropdown-item {{ request()->is('founders') ? 'active' : '' }}"
+                                                    <a class="{{ request()->is('founders') ? 'active' : '' }}"
                                                         href="{{url('founders')}}">
                                                         {{ __('Our Team') }}
                                                     </a>
