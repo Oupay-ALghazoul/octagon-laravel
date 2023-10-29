@@ -31,12 +31,12 @@
         <div class="row">
             <div class="featured-boxes featured-boxes-style-2">
 
-                    <div class="row mb-5 pb-3">
+                    <div class="row align-items-stretch mb-5 pb-3">
 
                         @foreach ($representatives as $representative)
 
-                        <div class="col-12 col-lg-6 mt-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
-                            <div class="card">
+                        <div class="col-12 col-lg-6 mt-2 mb-3 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+                            <div class="card h-100">
                                 <div class="row g-0">
                                     <div class="col-lg-4">
                                         <img style="width: 200px" src="{{ Voyager::image($representative->image) }}" class="rounded-circle pt-3 px-3" alt="...">

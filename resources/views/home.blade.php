@@ -62,18 +62,32 @@
 
 <div class="container pb-1">
 
-    <h2 class="font-weight-normal text-7 text-center mt-5"> {{ __("ًWho We Are") }} </h2>
+    <h2 class="font-weight-normal text-7 text-center mt-5 mb-4"> {{ __("Who We Are") }} </h2>
+
+    <div style="text-align: justify">
+        @if ($locale == 'en')                        
+        <p style="font-size: 1.2rem; font-weight: 400">
+            <strong style="font-weight: 400">OCTAGON</strong> is a privately owned consultancy firm with global expertise. Established in Dubai, UAE in 2022 by partners who collectively have over 55 years of international expertise in asset management, investment banking, strategic planning and consulting. OCTAGON strives to serve clients to best international standards and meet their needs when it comes to selecting right jurisdiction and structure, establishing and maintaining relationship with banks, transferring assets and protecting value of their wealth and providing lifestyle solutions.
+        </p>
+        @elseif ($locale == 'ar')
+        <p style="font-size: 1.2rem; font-weight: 400">
+            <strong style="font-weight: 400">اوكتاجون</strong>
+            هي شركة استشارية مملوكة للقطاع الخاص تتمتع بخبرة عالمية. تأسست في دبي ، الإمارات العربية المتحدة في عام 2022 من قبل شركاء لديهم أكثر من 55 عامًا من الخبرة الدولية في إدارة الأصول والخدمات المصرفية الاستثمارية والتخطيط الاستراتيجي والاستشارات.
+            تسعى اوكتاجون جاهدة لخدمة عملائها وفقًا لأفضل المعايير الدولية وتلبية احتياجاتهم عندما يتعلق الأمر باختيار الاختصاص والهيكل المناسبين، إنشاء والحفاظ على العلاقة مع البنوك، نقل الأصول وحماية قيمة ثرواتهم وتوفير حلول أسلوب الحياة.                        
+        </p>
+        @endif
+    </div>
 
     <div class="featured-boxes featured-boxes-style-2">
 
-        <div class="row mb-5 pb-3">
+        <div class="row align-items-stretch mb-5 pb-3">
 
             @foreach ($whoWeAreCards as $card)
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible"
+                <div class="col-md-6 col-lg-4 mb-3 appear-animation animated fadeInUpShorter appear-animation-visible"
                     data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200"
                     style="animation-delay: 200ms;">
                     <div
-                        class="card bg-color-light box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
+                        class="card h-100 bg-color-light box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
                         <div class="card-body">
                             <h3 style="background-color: {{ $card->title_color }}"
                                 class="card-title mb-1 text-white text-4 font-weight-bold px-2 py-1">
