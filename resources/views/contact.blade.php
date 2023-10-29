@@ -87,7 +87,7 @@
                 <div class="appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="800" style="animation-delay: 800ms;">
                     <h2 class="font-weight-bold text-7 mt-2 mb-0"> {{__('Contact Info')}} </h2>
                     <ul class="list list-icons list-icons-style-2 mt-2 p-3">
-                        <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">{{__('Contact Us')}}:</strong> {{ setting('site.address') }} </li>
+                        <li><i class="fas fa-map-marker-alt top-6"></i> <strong class="text-dark">{{__('Address')}}:</strong> {{ setting('site.address') }} </li>
                         <li><i class="fas fa-phone top-6"></i> <strong class="text-dark">{{__('Phone')}}:</strong> <span dir="ltr">{{ setting('site.contact_number') }} </span></li>
                         <li><i class="fas fa-envelope top-6"></i> <strong class="text-dark">{{__('Email')}}:</strong> <a href="mailto:{{ setting('site.contact_email') }}">{{ setting('site.contact_email') }}</a></li>
                     </ul>

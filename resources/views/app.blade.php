@@ -245,7 +245,7 @@
                                                         </li> --}}
                                                     </ul>
                                                 </li>
-                                                <li class="nav-item dropdown">
+                                                <li hidden class="nav-item dropdown">
                                                     <a class="dropdown-item dropdown-toggle {{ request()->is('services') ? 'active' : '' }}"
                                                         href="#">
                                                         {{ __('Services') }}
@@ -266,6 +266,12 @@
                                                             </li>
                                                         @endforeach
                                                     </ul>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="{{ request()->is('services') ? 'active' : '' }}"
+                                                        href="{{url('services')}}">
+                                                        {{ __('Services') }}
+                                                    </a>
                                                 </li>
                                                 <li class="nav-item">
                                                     <a class="{{ request()->is('global-capabilities') ? 'active' : '' }}"

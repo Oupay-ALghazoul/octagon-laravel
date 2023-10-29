@@ -38,8 +38,8 @@
                         <div class="col-12 col-lg-6 mt-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
                             <div class="card">
                                 <div class="row g-0">
-                                    <div class="col-lg-auto">
-                                        <img src="{{ Voyager::image($representative->image) }}" class="img-fluid rounded-circle pt-3 px-3" alt="...">
+                                    <div class="col-lg-4">
+                                        <img style="width: 200px" src="{{ Voyager::image($representative->image) }}" class="rounded-circle pt-3 px-3" alt="...">
                                     </div>
                                     <div class="col-lg-8">
                                         <div class="card-body">

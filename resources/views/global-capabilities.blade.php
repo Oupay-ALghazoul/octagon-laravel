@@ -42,7 +42,7 @@
                                     class="card bg-color-light box-shadow-1 box-shadow-1-hover anim-hover-translate-top-10px transition-3ms">
                                     <div class="card-body">
                                         <h3 style="background-color: {{ $capability->title_color }}"
-                                            class="card-title mb-1 text-white text-5 font-weight-bold px-2 py-1">
+                                            class="card-title mb-1 text-white text-4 font-weight-bold px-2 py-1">
                                             {{ $capability->translate($locale, 'en')->title }} </h3>
                                         <p class="card-text"> {!! $capability->translate($locale, 'en')->description !!} </p>
                                     </div>

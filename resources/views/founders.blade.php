@@ -58,7 +58,7 @@
         <div class="container py-4">
 
             @foreach ($founders as $founder)
-                <div class="row {{ $loop->index % 2 != 0 ? 'd-none' : ' ' }}">
+                <div class="row row  align-items-center {{ $loop->index % 2 != 0 ? 'd-none' : ' ' }}">
                     <div class="col-md-7 order-2">
                         <div class="overflow-hidden">
                             <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation"
@@ -97,18 +97,18 @@
                         </div> --}}
                         </div>
                     </div>
-                    <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation"
+                    <div class="col-md-5 order-md-2 mb-4 mb-lg-0 px-5 appear-animation"
                         data-appear-animation="fadeInRightShorter">
-                        <img src="{{ Voyager::image($founder->image) }}" class="img-fluid" alt="">
+                        <img src="{{ Voyager::image($founder->image) }}" class="img-fluid px-5" alt="">
                     </div>
                 </div>
 
                 {{--  --}}
 
-                <div class="row {{ $loop->index % 2 == 0 ? 'd-none' : ' ' }}">
-                    <div class="col-md-5 order-md-2 mb-4 mb-lg-0 appear-animation"
+                <div class="row row  align-items-center {{ $loop->index % 2 == 0 ? 'd-none' : ' ' }}">
+                    <div class="col-md-5 order-md-2 mb-4 mb-lg-0 px-5 appear-animation"
                         data-appear-animation="fadeInLeftShorter">
-                        <img src="{{ Voyager::image($founder->image) }}" class="img-fluid" alt="">
+                        <img src="{{ Voyager::image($founder->image) }}" class="img-fluid px-5" alt="">
                     </div>
                     <div class="col-md-7 order-2">
                         <div class="overflow-hidden">

@@ -61,7 +61,7 @@
     <div class="home-intro light border border-bottom-0 mb-0">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-12">
+                <div style="text-align: justify" class="col-lg-12">
                     <p class="font-weight-bold text-color-dark">
                         {{-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla quasi voluptates tempore maxime non
                         libero quod voluptatem, similique iure, eaque nesciunt odio voluptatum obcaecati! Eius fugit ut
@@ -133,10 +133,10 @@
                     
                 <div class="col-12 col-md-6 mb-4">
                     <div style="border-bottom: 3px solid var(--primary)" class="what-we-deliver-item bg-color-hover-primary d-flex align-items-center bg-white p-4 h-100">
-                        <img class="mr-3" src="{{ Voyager::image($whatWeDeliverItem->logo) }}" alt="Generic placeholder image">
+                        <img style="width: 80px" class="mr-3" src="{{ Voyager::image($whatWeDeliverItem->logo) }}" alt="Generic placeholder image">
                         <div class="p-3">
                         <h4 class="mb-0">{{ $whatWeDeliverItem->translate($locale, "en")->title }}</h4>
-                        <p class="">{{ $whatWeDeliverItem->translate($locale, "en")->sub_title }}</p>
+                        <p class="mb-0">{{ $whatWeDeliverItem->translate($locale, "en")->sub_title }}</p>
                         </div>
                     </div>
                 </div>
