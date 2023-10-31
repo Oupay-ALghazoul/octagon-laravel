@@ -1,7 +1,9 @@
 @php
     $locale = Session::get('locale') ?? 'en';
     $services = \App\Models\Service::withTranslation(['ar', 'ru'])->get();
-    $founders = \App\Models\Founder::orderByRaw("COALESCE(`order`, 'zz') ASC")->withTranslations(['ar', 'ru'])->get();
+    $founders = \App\Models\Founder::orderByRaw("COALESCE(`order`, 'zz') ASC")
+        ->withTranslations(['ar', 'ru'])
+        ->get();
     $aboutUs = \App\Models\AboutUs::withTranslations(['ar', 'ru'])->first();
     $clients = \App\Models\Client::withTranslations(['ar', 'ru'])->get();
     $values = \App\Models\PropositionValue::withTranslations(['ar', 'ru'])->get();
@@ -61,12 +63,22 @@
                 <div class="row row  align-items-center {{ $loop->index % 2 != 0 ? 'd-none' : ' ' }}">
                     <div class="col-md-7 order-2">
                         <div class="overflow-hidden">
-                            <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="300"> {{ $founder->translate($locale, 'en')->name}} </h2>
+
+                            @if ($founder->name_as_image)
+                                <img style="max-height: 42px" src="{{ Voyager::image($founder->name_as_image) }}"
+                                    class="appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="300">
+                            @else
+                                <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation"
+                                    data-appear-animation="maskUp" data-appear-animation-delay="300">
+                                    {{ $founder->translate($locale, 'en')->name }} </h2>
+                            @endif
+
                         </div>
                         <div class="overflow-hidden mb-3">
                             <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="500">  {{ $founder->translate($locale, 'en')->job_title}}
+                                data-appear-animation="maskUp" data-appear-animation-delay="500">
+                                {{ $founder->translate($locale, 'en')->job_title }}
                             </p>
                         </div>
                         <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
@@ -112,12 +124,22 @@
                     </div>
                     <div class="col-md-7 order-2">
                         <div class="overflow-hidden">
-                            <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="300">{{ $founder->translate($locale, 'en')->name}}</h2>
+
+                            @if ($founder->name_as_image)
+                                <img style="max-height: 42px" src="{{ Voyager::image($founder->name_as_image) }}"
+                                    class="appear-animation" data-appear-animation="maskUp"
+                                    data-appear-animation-delay="300">
+                            @else
+                                <h2 class="text-color-dark font-weight-bold text-8 mb-0 pt-0 mt-0 appear-animation"
+                                    data-appear-animation="maskUp" data-appear-animation-delay="300">
+                                    {{ $founder->translate($locale, 'en')->name }} </h2>
+                            @endif
+
                         </div>
                         <div class="overflow-hidden mb-3">
                             <p class="font-weight-bold text-primary text-uppercase mb-0 appear-animation"
-                                data-appear-animation="maskUp" data-appear-animation-delay="500">{{ $founder->translate($locale, 'en')->job_title}}
+                                data-appear-animation="maskUp" data-appear-animation-delay="500">
+                                {{ $founder->translate($locale, 'en')->job_title }}
                             </p>
                         </div>
                         <p class="lead appear-animation" data-appear-animation="fadeInUpShorter"
@@ -156,11 +178,12 @@
             <div class="row justify-content-center pt-4 mt-5 mb-5">
                 <div class="col-lg-10 text-center">
                     <div class="overflow-hidden mb-3">
-                        @if ($locale == 'en')                        
+                        @if ($locale == 'en')
                             <p class="lead mb-0 appear-animation animated maskUp appear-animation-visible"
                                 data-appear-animation="maskUp" data-appear-animation-delay="200"
                                 style="animation-delay: 200ms;">
-                                Our passion for finance, combined with extensive experience and wide network, allows to deliver
+                                Our passion for finance, combined with extensive experience and wide network, allows to
+                                deliver
                                 exceptional results to the clients. We are committed to providing personalized and tailored
                                 solutions to each client, taking into account their unique circumstances and financial
                                 objectives.
